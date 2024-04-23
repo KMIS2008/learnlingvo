@@ -6,6 +6,22 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from 'styled-components';
 // import { store } from "./redux/store";
 
+// import * as firebase from 'firebase';
+
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBhyNb9k6wBqjaqz_c59ZhYvYSAb22LpBw",
+//   authDomain: "learnlingvo-fb7e1.firebaseapp.com",
+//   databaseURL: "https://learnlingvo-fb7e1-default-rtdb.europe-west1.firebasedatabase.app",
+//   projectId: "learnlingvo-fb7e1",
+//   storageBucket: "learnlingvo-fb7e1.appspot.com",
+//   messagingSenderId: "576098443295",
+//   appId: "1:576098443295:web:fe35ff740f67b23418752a",
+//   measurementId: "G-DD4PDXLMXL"
+// }
+
+// firebase.initializeApp(firebaseConfig);
+
 const theme = {
   colors: {
     yellow:'#F4C550',
