@@ -1,20 +1,14 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import{Container,
-       Header,
-       Link} from "./AppLayout.styled";
+import{Container} from "./AppLayout.styled";
+import {AppBar} from '../AppBar/AppBar';
+
 
 
 const AppLayout=()=>{
     return (
     <Container>
-        <Header>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/teacher">Teachers</Link>
-                {/* <Link to="/favorite">Favorite</Link> */}
-            </nav>
-        </Header>   
+        <AppBar/>
 
         <main>
         <Suspense fallback={<div>LOADING PAGE...</div>}>
