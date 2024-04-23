@@ -2,19 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import { ThemeProvider } from 'styled-components';
-import { store } from "./redux/store";
+// import { store } from "./redux/store";
 
 const theme = {
   colors: {
-    black: '#101828',
-    grey:'#475467',
-    red:'#E44848',
-    yellow:'#FFC531',
-    beige:'#F2F4F7',
-    white:'#F7F7F7',
-    hover:'#d84343',
+    yellow:'#F4C550',
+    beigelight: '#FBE9BA',
+    greyblue:'#9FBAAE',
+    bluelight:'#CBDED3',
+    bluedark: "#9FB7CE",
+    blue:"#BFD6EA",
+    rosedark:'##E0A39A',
+    rose:'#F2C0BD',
+    beige: "#F0AA8D",
+    roselight:"#F4C8BA",
+    hover:"#FFDC86",
   },
 
   spacing: value => `${value * 5}px`,
@@ -23,12 +27,12 @@ const theme = {
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <BrowserRouter basename="orenda-kempera">
-      <Provider store={store}>
+    <BrowserRouter basename="learnlingvo">
+      {/* <Provider store={store}> */}
         <ThemeProvider theme = {theme}>
          <App />
        </ThemeProvider>        
-      </Provider>
+      {/* </Provider> */}
     </BrowserRouter>
   </React.StrictMode>
 );

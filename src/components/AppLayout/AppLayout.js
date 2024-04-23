@@ -11,8 +11,8 @@ const AppLayout=()=>{
         <Header>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/catalog">Catalog</Link>
-                <Link to="/favorite">Favorite</Link>
+                <Link to="/teacher">Teachers</Link>
+                {/* <Link to="/favorite">Favorite</Link> */}
             </nav>
         </Header>   
 

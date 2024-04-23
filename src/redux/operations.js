@@ -3,6 +3,10 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
 axios.defaults.baseURL = "https://6570b71409586eff6641d7fb.mockapi.io";
+// https://firebase.googleapis.com
+// learnlingvo-fb7e1
+// https://learnlingvo-fb7e1-default-rtdb.europe-west1.firebasedatabase.app/
+
 
 
 
