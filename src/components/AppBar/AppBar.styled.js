@@ -2,21 +2,36 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Header = styled.header`
-/* width: auto;
-margin: 0%, auto;
-margin-bottom: ${p=>p.theme.spacing(4)};
-padding: ${p=>p.theme.spacing(4)};
-border: solid 2px ${p=>p.theme.colors.darkblue};
-box-shadow: 10px 5px 5px ${p=>p.theme.colors.darkblue};
-background-color: ${p=>p.theme.colors.yellow}; */
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: auto;
+padding-left: ${p=>p.theme.spacing(12)};
+padding-right: ${p=>p.theme.spacing(12)};
+
+`
+export const IconCompany = styled.div`
+display: flex;
+align-content: center;
+
+gap:${p=>p.theme.spacing(1)};
+`
+
+export const NameCompany = styled.p`
+font-size:20px;
+font-weight: 500;
+line-height: 1,2;
+letter-spacing: -0.4px;
 `
 
 export const Link = styled(NavLink)`
 
-/* margin-left: ${p=>p.theme.spacing(4)};
-font-size: 20px;
+margin-left: ${p=>p.theme.spacing(2)};
+font-size: 16px;
+line-height: 1,25;
+color: #121417;
 
-&:hover {
-    color: ${p=>p.theme.colors.red};
-  } */
+&.active{
+    color: ${p=>p.theme.colors.bluedark};
+  }
 `
