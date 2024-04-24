@@ -12,17 +12,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
-  table, td {
-  border: 1px solid #b5b5d6; 
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
   ul {
   list-style: circle;

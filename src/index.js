@@ -37,7 +37,7 @@ const theme = {
     hover:"#FFDC86",
   },
 
-  spacing: value => `${value * 5}px`,
+  spacing: value => `${value * 4}px`,
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(

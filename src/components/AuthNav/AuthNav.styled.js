@@ -24,7 +24,7 @@ export const NavContainer = styled.div`
 export const ButtonLogin = styled.button`
 display: block;
 margin: auto;
-margin-right: ${p=>p.theme.spacing(1)};;
+margin-right: ${p=>p.theme.spacing(1)};
 font-size: 16px;
 font-weight: 700;
 line-height: 1.25;

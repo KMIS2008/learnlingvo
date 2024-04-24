@@ -7,9 +7,11 @@ export const AuthNav=()=>{
                <svg width= '20px' height='20px'>
                    <use xlinkHref={sprite + '#icon-loginblue'} />
               </svg>
-            <ButtonLogin>Log in</ButtonLogin>
+            <ButtonLogin type="button">Log in</ButtonLogin>
 
-            <ButtonRegistr>Register</ButtonRegistr>
+            <ButtonRegistr type="button">Registration</ButtonRegistr>
+
+            <ButtonLogin type="button">Log out</ButtonLogin>
 
 
             {/* <Link to="/login"></Link>

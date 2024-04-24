@@ -3,13 +3,13 @@ import{
     Header, IconCompany, NameCompany,
     Link} from "./AppBar.styled";
 import{AuthNav} from '../AuthNav/AuthNav'
-import {Container} from '../Container/Container';
 
 
 export const AppBar=()=>{
     return (
-   <Container>
+   
         <Header>
+
             <IconCompany>
                <svg width= '28px' height='28px'>
                 <use xlinkHref={sprite + '#icon-ukraine'} />
@@ -18,7 +18,6 @@ export const AppBar=()=>{
                <NameCompany>LearnLingo</NameCompany>                
             </IconCompany>
 
-
             <nav>
                 <Link to="/">Home</Link>
                 <Link to="/teacher">Teachers</Link>
@@ -26,9 +25,9 @@ export const AppBar=()=>{
             </nav>
 
             <AuthNav/>
+
         </Header>
-   </Container>
-   
+  
     )
 }
 
