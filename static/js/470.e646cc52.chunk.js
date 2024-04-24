@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklearnlingvo=self.webpackChunklearnlingvo||[]).push([[470],{470:function(n,e,r){r.r(e),r.d(e,{default:function(){return c}});var u=function(){},i=r(184);function c(){return(0,i.jsxs)("div",{children:[(0,i.jsx)("h1",{children:"Your favorite campers"}),(0,i.jsx)(u,{})]})}}}]);
+//# sourceMappingURL=470.e646cc52.chunk.js.map
