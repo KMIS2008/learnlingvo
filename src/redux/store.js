@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { catalogReducer } from "./catalogSlice";
+import { catalogReducer } from "./teacherSlice";
 import {
   FLUSH,
   REHYDRATE,

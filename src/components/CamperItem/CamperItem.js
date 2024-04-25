@@ -4,7 +4,7 @@ import {ContainerItem, Image, Title, Header, Price, LocalRewiew, Reviews, Locati
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {ModalShow} from '../Modal/ModalShow';
-import{addFavorite, removeFavorite} from '../../redux/catalogSlice';
+import{addFavorite, removeFavorite} from '../../redux/teacherSlice';
 import { useSelector } from 'react-redux';
 import {selectFavourite} from '../../redux/selectors';
 
