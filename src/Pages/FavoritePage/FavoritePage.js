@@ -1,10 +1,11 @@
-import {Favorite} from '../../components/Favorite/Favorite';
+// import {Favorite} from '../../components/Favorite/Favorite';
+import {Title} from './FavoritPage.styled';
 
 export default function FavoritesPage() {
     return (
       <div>
-        <h1>Your favorite campers</h1>
-        <Favorite/>
+        <Title>Your favorite teaches</Title>
+        {/* <Favorite/> */}
       </div>
     );
   }
