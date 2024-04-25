@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklearnlingvo=self.webpackChunklearnlingvo||[]).push([[410],{410:function(n,e,t){t.r(e),t.d(e,{default:function(){return a}});var i,r=t(168),c=t(867).ZP.h1(i||(i=(0,r.Z)(["\ndisplay: block;\npadding-top: ",";\npadding-bottom: ",";\ntext-align: center;\n"])),(function(n){return n.theme.spacing(5)}),(function(n){return n.theme.spacing(5)})),u=t(184);function a(){return(0,u.jsx)("div",{children:(0,u.jsx)(c,{children:"Your favorite teaches"})})}}}]);
+//# sourceMappingURL=410.be866fa8.chunk.js.map
