@@ -1,6 +1,6 @@
 import sprite from '../../assets/sprite.svg';
-import {Levels} from '../Level/Level';
-import {ReadMore} from '../ReadMore/ReadMore';
+// import {Levels} from '../Level/Level';
+// import {ReadMore} from '../ReadMore/ReadMore';
 
 export const TeacherItem = ({value}) => {
 

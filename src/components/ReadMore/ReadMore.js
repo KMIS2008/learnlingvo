@@ -3,14 +3,14 @@ import sprite from '../../assets/sprite.svg';
 
 export const ReadMore = ({reviews})=>{
     const {reviewer_name, 
-        reviewer_rating,
-        comment
-    }= reviews;
+           reviewer_rating,
+           comment
+          } = reviews;
     const id =nanoid();
 
    return(
     <ul>
-        {reviews.map((review)=>(
+        {reviews.map(()=>(
            <li key={id}>
             <div>
                 <svg width= '44px' height='44px'>
