@@ -6,8 +6,6 @@ const teacherSlice = createSlice({
     initialState: {
       items: [],
       isLoading: false,
-      isLogin:false,
-      error: null,
       isFavorite: [],
     },
 
@@ -27,12 +25,10 @@ const teacherSlice = createSlice({
         })
         .addCase(fetchTeachers.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.error = null;
           state.items = action.payload;
         })
         .addCase(fetchTeachers.rejected, (state, action) => {
           state.isLoading = false;
-          state.error = action.payload;
         });
     },
   });

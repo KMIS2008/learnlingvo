@@ -11,7 +11,7 @@ import {
 
 export const store = configureStore({
   reducer: {
-    catalog: catalogReducer,
+    teacher: catalogReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

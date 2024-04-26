@@ -13,8 +13,8 @@ export const TeacherItem = ({value}) => {
         languages,
         lesson_info,
         conditions,
-        levels,
-        reviews,
+        // levels,
+        // reviews,
     } = value;
 
     return (
