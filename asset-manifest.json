@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/learnlingvo/static/css/main.cd2e038f.css",
-    "main.js": "/learnlingvo/static/js/main.0945809b.js",
-    "static/js/711.bef2c66d.chunk.js": "/learnlingvo/static/js/711.bef2c66d.chunk.js",
+    "main.js": "/learnlingvo/static/js/main.3b1e5188.js",
+    "static/js/711.65702824.chunk.js": "/learnlingvo/static/js/711.65702824.chunk.js",
     "static/js/399.8f86e1aa.chunk.js": "/learnlingvo/static/js/399.8f86e1aa.chunk.js",
     "static/js/20.ee07b8c5.chunk.js": "/learnlingvo/static/js/20.ee07b8c5.chunk.js",
     "static/js/410.d0b9ded5.chunk.js": "/learnlingvo/static/js/410.d0b9ded5.chunk.js",
-    "static/js/589.86f58815.chunk.js": "/learnlingvo/static/js/589.86f58815.chunk.js",
+    "static/js/969.13b8d7a3.chunk.js": "/learnlingvo/static/js/969.13b8d7a3.chunk.js",
     "static/media/girl.jpg": "/learnlingvo/static/media/girl.0c19c89fdaea5eb5e09a.jpg",
     "static/media/sprite.svg": "/learnlingvo/static/media/sprite.488cd071055e79acccf029c4bf0b1efe.svg",
     "index.html": "/learnlingvo/index.html",
     "main.cd2e038f.css.map": "/learnlingvo/static/css/main.cd2e038f.css.map",
-    "main.0945809b.js.map": "/learnlingvo/static/js/main.0945809b.js.map",
-    "711.bef2c66d.chunk.js.map": "/learnlingvo/static/js/711.bef2c66d.chunk.js.map",
+    "main.3b1e5188.js.map": "/learnlingvo/static/js/main.3b1e5188.js.map",
+    "711.65702824.chunk.js.map": "/learnlingvo/static/js/711.65702824.chunk.js.map",
     "399.8f86e1aa.chunk.js.map": "/learnlingvo/static/js/399.8f86e1aa.chunk.js.map",
     "20.ee07b8c5.chunk.js.map": "/learnlingvo/static/js/20.ee07b8c5.chunk.js.map",
     "410.d0b9ded5.chunk.js.map": "/learnlingvo/static/js/410.d0b9ded5.chunk.js.map",
-    "589.86f58815.chunk.js.map": "/learnlingvo/static/js/589.86f58815.chunk.js.map"
+    "969.13b8d7a3.chunk.js.map": "/learnlingvo/static/js/969.13b8d7a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.0945809b.js"
+    "static/js/main.3b1e5188.js"
   ]
 }
