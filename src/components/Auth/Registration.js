@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 // import {useDispatch } from 'react-redux';
-import {Input, Button} from './Registration.styled';
+import {Input, Button, ButtonEye} from './Registration.styled';
+import { FiEyeOff, FiEye } from 'react-icons/fi';
+
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -26,6 +28,8 @@ export function Registration() {
     console.log(data); // Вы можете здесь отправить данные на сервер или выполнять другие действия с данными формы
   };
 
+  const [visibility, setVisibility] = useState(false);
+
 //   const handleSubmit =e=>{
 //     e.preventDefault();
 //     const form = e.currentTarget;
@@ -42,31 +46,30 @@ export function Registration() {
 
     <form onSubmit={handleSubmit(onSubmit)}>
 
-       <div>
-
          <Input
           type="text"
           id="name"
           placeholder='Name'
           {...register('name', { required: true })}
         />
-
-       </div>
-      
-       <div>
-     
+  
          <Input type="email" 
          id = "email" 
          placeholder='Email' 
          {...register('email', { required: true })} />
- 
-       </div>
+   
        <div>
      
          <Input type="password" 
          id = "password" 
          placeholder='Password' 
          {...register('password', { required: true })} />
+
+<ButtonEye type='button' onClick={()=>setVisibility(!visibility)}>
+           {
+            visibility? < FiEye/> : < FiEyeOff/>
+           }
+         </ButtonEye> 
     
        </div>
       <Button type="submit">Sign Up</Button>

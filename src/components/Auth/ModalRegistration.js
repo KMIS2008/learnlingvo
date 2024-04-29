@@ -24,7 +24,7 @@ export const ModalRegisration = ({ isOpenModalRegistration, setIsOpenModalRegist
       transform: "translate(-50%, -50%)",
       padding: "40px",
       maxWidth: "566px",
-      maxHeight: "506px",
+      maxHeight: "600px",
       borderRadius: "30px",
     },
   };
