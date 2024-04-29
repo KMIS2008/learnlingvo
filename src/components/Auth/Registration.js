@@ -2,15 +2,18 @@ import { useForm } from 'react-hook-form';
 import React from 'react';
 import * as Yup from 'yup';
 // import {useDispatch } from 'react-redux';
-import {Input, Button} from './Login.styled';
+import {Input, Button} from './Registration.styled';
 
 const SignupSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan")
+      .required('Required'),
     email: Yup.string().email("Email must contait @").required('Required'),
     password: Yup.string().min(6, "Password contain min 6 symbols").required('Required'),
   });
 
 
-export function Login() {
+export function Registration() {
 //   const dispatch = useDispatch();
 
   const {
@@ -38,18 +41,35 @@ export function Login() {
   return (
 
     <form onSubmit={handleSubmit(onSubmit)}>
+
+       <div>
+
+         <Input
+          type="text"
+          id="name"
+          placeholder='Name'
+          {...register('name', { required: true })}
+        />
+
+       </div>
       
-    <div>
+       <div>
      
-      <Input type="email" placeholder='Email' {...register('email', { required: true })} />
+         <Input type="email" 
+         id = "email" 
+         placeholder='Email' 
+         {...register('email', { required: true })} />
  
-    </div>
-    <div>
+       </div>
+       <div>
      
-      <Input type="password" placeholder='Password' {...register('password', { required: true })} />
+         <Input type="password" 
+         id = "password" 
+         placeholder='Password' 
+         {...register('password', { required: true })} />
     
-    </div>
-    <Button type="submit">Log In</Button>
+       </div>
+      <Button type="submit">Sign Up</Button>
   </form>
     
   );
