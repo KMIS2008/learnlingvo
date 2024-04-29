@@ -4,7 +4,8 @@ import { App } from 'components/App';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from 'styled-components';
-import { store } from "./redux/store";
+import { persistor, store } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 // import * as firebase from 'firebase';
 
@@ -44,11 +45,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
     <BrowserRouter basename="learnlingvo">
-      <Provider store={store}>
-        <ThemeProvider theme = {theme}>
-         <App />
-       </ThemeProvider>        
-      </Provider>
+    {/* <PersistGate loading={null} persistor={persistor}> */}
+        <Provider store={store}>
+          <ThemeProvider theme = {theme}>
+           <App />
+          </ThemeProvider>        
+        </Provider>
+      {/* </PersistGate> */}
     </BrowserRouter>
   </React.StrictMode>
 );

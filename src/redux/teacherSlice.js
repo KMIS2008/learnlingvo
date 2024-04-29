@@ -1,10 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {fetchTeachers} from './operations';
 
-const teacherSlice = createSlice({
-    name: "teacher",
+const favoriteSlice = createSlice({
+    name: "favorite",
     initialState: {
-      items: [],
       isLoading: false,
       isFavorite: [],
     },
@@ -18,20 +16,8 @@ const teacherSlice = createSlice({
         state.isFavorite = state.isFavorite.filter((item) => item._id !== action.payload._id);
       },
     },
-    extraReducers: (builder) => {
-      builder
-        .addCase(fetchTeachers.pending, (state, _) => {
-          state.isLoading = true;
-        })
-        .addCase(fetchTeachers.fulfilled, (state, action) => {
-          state.isLoading = false;
-          state.items = action.payload;
-        })
-        .addCase(fetchTeachers.rejected, (state, action) => {
-          state.isLoading = false;
-        });
-    },
+
   });
   
-  export const catalogReducer = teacherSlice.reducer;
-  export const { addFavorite, removeFavorite } = teacherSlice.actions;
+  export const favoriteReducer = favoriteSlice.reducer;
+  export const { addFavorite, removeFavorite } = favoriteSlice.actions;

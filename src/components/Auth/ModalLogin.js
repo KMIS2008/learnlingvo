@@ -9,7 +9,7 @@ import {Container,
 Modal.setAppElement('#modal');
 
 
-export const ModalLogin = ({ isModalOpen, setIsOpen }) => {
+export const ModalLogin = ({ isModalOpen, setIsOpen, }) => {
 
   const customStyles = {
     overlay: {

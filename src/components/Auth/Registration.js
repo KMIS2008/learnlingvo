@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-// import {useDispatch } from 'react-redux';
+import {useDispatch } from 'react-redux';
 import {Input, Button, ButtonEye} from './Registration.styled';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../database';
+import {addToken} from '../../redux/AuthSlice';
 
 
 const SignupSchema = Yup.object().shape({
@@ -16,31 +19,46 @@ const SignupSchema = Yup.object().shape({
 
 
 export function Registration() {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [visibility, setVisibility] = useState(false);
 
   const {
     register,
     handleSubmit,
-    // formState: { errors },
+    reset
   } = useForm({ validationSchema:SignupSchema});
 
-  const onSubmit = (data) => {
-    console.log(data); // Вы можете здесь отправить данные на сервер или выполнять другие действия с данными формы
+
+  const handlePassword = evt => {
+    evt.preventDefault();
+    setIsPasswordVisible(prevState => !prevState);
   };
 
-  const [visibility, setVisibility] = useState(false);
+  const  onSubmit = async (data) => {
+    const { email, password } = data;
+   
 
-//   const handleSubmit =e=>{
-//     e.preventDefault();
-//     const form = e.currentTarget;
-//     dispatch(
-//         logIn({
-//             email: form.elements.email.value,
-//             password: form.elements.password.value,
-//         })
-//     )
-//     form.reset();
-// }
+  try {
+    const result = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    )
+
+    // const accessToken = await login.user.getIdToken();
+
+    // dispatch(addToken(accessToken));
+
+    dispatch(addToken(result.user.accessToken));
+    reset();
+    return result;
+  } catch (error) {
+    throw error;
+  }}
+    
+
+  
 
   return (
 
@@ -60,14 +78,14 @@ export function Registration() {
    
        <div>
      
-         <Input type="password" 
+         <Input type={isPasswordVisible ? 'text' : 'password'} 
          id = "password" 
          placeholder='Password' 
          {...register('password', { required: true })} />
 
 <ButtonEye type='button' onClick={()=>setVisibility(!visibility)}>
            {
-            visibility? < FiEye/> : < FiEyeOff/>
+            visibility? < FiEye onClick={handlePassword}/> : < FiEyeOff onClick={handlePassword}/>
            }
          </ButtonEye> 
     
