@@ -1,15 +1,14 @@
 import { nanoid } from 'nanoid';
+import {Button, Container} from './Level.styled';
 
-export const Levels = (levels) => {
+export const Levels = ({levels}) => {
     
-    const id = nanoid();
-
     return(
-        <ul>
+        <Container>
             {levels.map((level)=>(
-              <li key ={id} >
+              <Button key ={nanoid()} >
                  <p>{level}</p>
-              </li>                
+              </Button>                
             ))}
-        </ul>
+        </Container>
 )}
