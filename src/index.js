@@ -31,7 +31,7 @@ const theme = {
     bluelight:'#CBDED3',
     bluedark: "#9FB7CE",
     blue:"#BFD6EA",
-    rosedark:'##E0A39A',
+    rosedark:'#E0A39A',
     rose:'#F2C0BD',
     beige: "#F0AA8D",
     roselight:"#F4C8BA",

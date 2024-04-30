@@ -1,6 +1,19 @@
 import sprite from '../../assets/sprite.svg';
-// import {Levels} from '../Level/Level';
-// import {ReadMore} from '../ReadMore/ReadMore';
+import {Avatar,
+        Img,
+        IconImg,
+        ContainerTeacher,
+        ContainerHeader,
+        ContainerInfo,
+        SvgInfo,
+        Name,
+        NameText,
+        Text,
+        TextSpeaker,
+        ButtonReadMore, 
+        ButtoBook} from './TeacherItem.styled';
+import {Levels} from '../Level/Level';
+import {ReadMore} from '../ReadMore/ReadMore';
 
 export const TeacherItem = ({value}) => {
 
@@ -13,30 +26,32 @@ export const TeacherItem = ({value}) => {
         languages,
         lesson_info,
         conditions,
-        // levels,
-        // reviews,
+        levels,
+        reviews,
     } = value;
 
     return (
-        <div>
-            <div>
-                <img src={avatar_url} alt="Avatar"/>
+        <ContainerTeacher>
+            <Avatar>
+                <Img src={avatar_url} alt="Avatar"/>
 
-                <svg width= '12px' height='12px'>
+                <IconImg width= '12px' height='12px'>
                 <use xlinkHref={sprite + '#icon-Greenround'} />
-               </svg>
+               </IconImg>
 
-            </div>
+            </Avatar>
          
             <div>
 
-                <div>
-                    <p>Languages</p>
+                <ContainerHeader>
+                  <p>Languages</p>
+
+                  <ContainerInfo>
 
                     <p>
-                        <svg width= '12px' height='12px'>
+                        <SvgInfo width= '12px' height='12px'>
                             <use xlinkHref={sprite + '#icon-book-open'} />
-                        </svg>
+                        </SvgInfo>
                         Lessons online
                     </p>
 
@@ -51,9 +66,9 @@ export const TeacherItem = ({value}) => {
                     </svg>
 
                     <p>
-                       <svg width= '16px' height='16px'>
+                       <SvgInfo width= '16px' height='16px'>
                          <use xlinkHref={sprite + '#icon-star'} />
-                       </svg>
+                       </SvgInfo>
                        Rating: {rating}
                     </p>
 
@@ -69,25 +84,27 @@ export const TeacherItem = ({value}) => {
 
                     <svg width= '26px' height='26px'>
                         <use xlinkHref={sprite + '#icon-hover'} />
-                    </svg>
+                    </svg>      
 
-                </div>
+                  </ContainerInfo>
 
-                <h2>{name} {surname}</h2>
+                </ContainerHeader>
 
-                <p>Speaks: <span>{`${languages}`}</span> </p>
-                <p>Lesson Info: <span>{lesson_info}</span> </p>
-                <p>Conditions: <span>{`${conditions}`}</span> </p>
+                <Name>{name} {surname}</Name>
 
-                <button type='button'>Read more</button>
+                <NameText>Speaks: <TextSpeaker>{`${languages}`}</TextSpeaker> </NameText>
+                <NameText>Lesson Info: <Text>{lesson_info}</Text> </NameText>
+                <NameText>Conditions: <Text>{`${conditions}`}</Text> </NameText>
 
-                {/* <ReadMore reviews = {reviews}/>
+                <ButtonReadMore type='button'>Read more</ButtonReadMore>
 
-                <Levels levels = {levels}/> */}
+                <ReadMore reviews = {reviews}/>
 
-                <button type="button">Book trial lesson</button>
+                <Levels levels = {levels}/>
+
+                <ButtoBook type="button">Book trial lesson</ButtoBook>
 
             </div>
-        </div>
+        </ContainerTeacher>
     )
 }
