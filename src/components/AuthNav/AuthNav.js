@@ -3,10 +3,20 @@ import sprite from '../../assets/sprite.svg';
 import {ModalLogin} from '../Auth/ModalLogin';
 import {ModalRegisration} from '../Auth/ModalRegistration';
 import { useState } from "react";
+import { signOut } from 'firebase/auth';
+import { auth } from '../database';
+import { useDispatch } from "react-redux";
+import {deleteToken} from '../../redux/AuthSlice';
 
 export const AuthNav=()=>{
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isOpenModalRegistration, setIsOpenModalRegistration] = useState(false);
+    const dispatch = useDispatch();
+
+    const handleLogOut = ()=>{
+     signOut(auth);
+     dispatch(deleteToken())
+    }
 
     return (
          <NavContainer>
@@ -19,7 +29,7 @@ export const AuthNav=()=>{
             <ButtonRegistr type="button" onClick={() => {
               setIsOpenModalRegistration(true);}}>Registration</ButtonRegistr>
 
-            <ButtonLogin type="button" >Log out</ButtonLogin>
+            <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>
 
             <ModalLogin isModalOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
 
