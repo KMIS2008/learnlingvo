@@ -7,7 +7,7 @@ export const Levels = ({levels}) => {
         <Container>
             {levels.map((level)=>(
               <Button key ={nanoid()} >
-                 <p>{level}</p>
+                 <p>#{level}</p>
               </Button>                
             ))}
         </Container>
