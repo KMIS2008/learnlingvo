@@ -1,42 +1,36 @@
 import { nanoid } from 'nanoid';
 import sprite from '../../assets/sprite.svg';
+import{ListContainer, ItemContainer, Container, ImgAvatar, ReviewerName, SvgContainer, Comment} from './ReadMore.styled';
 
 export const ReadMore = ({reviews})=>{
-    const {reviewer_name, 
-           reviewer_rating,
-           comment
-          } = reviews;
-    const id =nanoid();
 
    return(
-    <ul>
-        {reviews.map(()=>(
-           <li key={id}>
-            <div>
-                <svg width= '44px' height='44px'>
-                   <use xlinkHref={sprite + '#icon-hover'} />
-                </svg>
+    <ListContainer>
+        {reviews.map((review)=>
+           (<ItemContainer key={nanoid()}>
+            <Container>
+                <ImgAvatar src="" alt="Avatar"/>
 
-                <p>{reviewer_name}</p>
+                <div>
+                   <ReviewerName>{review.reviewer_name}</ReviewerName>
 
-                <p>
-                    <svg width= '16px' height='16px'>
+                   <SvgContainer>
+                      <svg width= '16px' height='16px'>
                          <use xlinkHref={sprite + '#icon-star'} />
-                    </svg>  
+                      </svg>  
 
-                    {reviewer_rating}                 
-                </p>
+                       {review.reviewer_rating}                 
+                    </SvgContainer>                    
+                </div>
 
-            </div>
+            </Container>
 
-            <p>{comment}</p>
+            <Comment>{review.comment}</Comment>
 
-           </li>      
-        )
+           </ItemContainer>      )
+            ) }
 
-        )}
-   
-    </ul>
+    </ListContainer>
 
 
    )
