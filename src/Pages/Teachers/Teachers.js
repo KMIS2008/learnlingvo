@@ -6,27 +6,13 @@ import { ref, get,
   // child,
   //  query, orderByKey, limitToFirst
    } from 'firebase/database';
+import {FilterForm} from '../../components/Filter/FilterForm';
 
 
 export default function Teachers (){
  
  const [teachers, setTeachers] = useState([]);
 
-  // useEffect(() => {
-  //       async function fetchTeachers() {
-  //     try {
-  //       const data = await get(child(dbRef, '/'));
-  //       if (data.exists()) {
-  //         setTeachers(data.val());
-  //       } else {
-  //         console.log('No data available for teachers');
-  //       }
-  //     } catch (error) {
-  //       console.error('Error:', error);
-  //     }
-  //   }
-  //   fetchTeachers();
-  // }, [dbRef]);
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -47,6 +33,10 @@ export default function Teachers (){
 
 
     return(
-       <TeacherList teachers = {teachers}/>
+      <>
+        <FilterForm/>
+        <TeacherList teachers = {teachers}/>
+      </>
+      
     )
 }

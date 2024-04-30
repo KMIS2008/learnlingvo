@@ -9,6 +9,7 @@ width: 100%;
 border-radius: 15px;
 border: 1px solid rgba(18, 20, 23, 0.1);
 color: #121417;
+outline: none;
 `
 export const ButtonEye = styled.button`
 position: absolute;
