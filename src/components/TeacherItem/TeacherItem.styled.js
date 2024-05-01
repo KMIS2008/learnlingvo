@@ -9,7 +9,9 @@ width: 100%;
 
 export const Avatar = styled.div`
 position: relative;
-padding: ${p=>p.theme.spacing(2,5)};
+display: flex;
+align-items: center;
+justify-content: center;
 
 max-width:120px;
 width:100%;
@@ -19,7 +21,6 @@ border: 3px solid #FBE9BA;
 `;
 
 export const Img = styled.img`
-
 width: 96px;
 height: 96px;
 border-radius: 50%;
