@@ -33,7 +33,9 @@ export const AuthNav=()=>{
 
             <ModalLogin isModalOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
 
-            <ModalRegisration isOpenModalRegistration={isOpenModalRegistration} setIsOpenModalRegistration={setIsOpenModalRegistration}/>
+            <ModalRegisration 
+            isOpenModalRegistration={isOpenModalRegistration} 
+            setIsOpenModalRegistration={setIsOpenModalRegistration}/>
 
         
          </NavContainer>

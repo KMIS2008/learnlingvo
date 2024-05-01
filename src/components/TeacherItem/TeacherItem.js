@@ -14,6 +14,8 @@ import {Avatar,
         ButtoBook} from './TeacherItem.styled';
 import {Levels} from '../Level/Level';
 import {ReadMore} from '../ReadMore/ReadMore';
+import { useState } from "react";
+import { ModalBookTrial } from 'components/ModalBookTrial/ModalBookTrial';
 
 export const TeacherItem = ({value}) => {
 
@@ -30,14 +32,16 @@ export const TeacherItem = ({value}) => {
         reviews,
     } = value;
 
+    const [isOpenModalBook, setIsOpenModalBook] = useState(false);
+
     return (
         <ContainerTeacher>
             <Avatar>
                 <Img src={avatar_url} alt="Avatar"/>
 
                 <IconImg width= '12px' height='12px'>
-                <use xlinkHref={sprite + '#icon-Greenround'} />
-               </IconImg>
+                   <use xlinkHref={sprite + '#icon-Greenround'} />
+                </IconImg>
 
             </Avatar>
          
@@ -102,7 +106,16 @@ export const TeacherItem = ({value}) => {
 
                 <Levels levels = {levels}/>
 
-                <ButtoBook type="button">Book trial lesson</ButtoBook>
+                <ButtoBook type="button" onClick={() => {
+              setIsOpenModalBook(true);}}>Book trial lesson</ButtoBook>
+                
+                <ModalBookTrial 
+                isOpenModalBook={isOpenModalBook} 
+                setIsOpenModalBook={setIsOpenModalBook}
+                avatar={avatar_url} 
+                name={name} 
+                surname={surname}
+                />
 
             </div>
         </ContainerTeacher>

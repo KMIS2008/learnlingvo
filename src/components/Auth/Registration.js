@@ -38,7 +38,6 @@ export function Registration() {
   const  onSubmit = async (data) => {
     const { email, password } = data;
    
-
   try {
     const result = await createUserWithEmailAndPassword(
       auth,
@@ -57,8 +56,6 @@ export function Registration() {
     throw error;
   }}
     
-
-  
 
   return (
 
