@@ -54,9 +54,10 @@ line-height: 1;
 `;
 
 export const NameText = styled.p`
-margin-bottom:${p=>p.theme.spacing(1)};
+margin-bottom:${p=>p.theme.spacing(2)};
+font-family: Roboto, sans-serif;
 font-size: 16px;
-font-weight: 500px;
+font-weight: 500;
 line-height: 1,5;
 color: #8A8A89;
 `;
@@ -69,6 +70,14 @@ text-decoration: underline;
 export const Text = styled.span`
 color: #121417;
 `;
+
+// export const TextExperience = styled.p`
+// margin-bottom:${p=>p.theme.spacing(11)};
+// font-family: Roboto, sans-serif;
+// font-size: 16px;
+// font-weight: 400;
+// line-height: 1,5;
+// `;
 
 export const ButtonReadMore = styled.button`
 margin-top:${p=>p.theme.spacing(1)};

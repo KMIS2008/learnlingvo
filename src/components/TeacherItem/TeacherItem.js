@@ -10,6 +10,7 @@ import {Avatar,
         NameText,
         Text,
         TextSpeaker,
+        // TextExperience,
         ButtonReadMore, 
         ButtoBook} from './TeacherItem.styled';
 import {Levels} from '../Level/Level';
@@ -28,11 +29,16 @@ export const TeacherItem = ({value}) => {
         languages,
         lesson_info,
         conditions,
+        // experience,
         levels,
         reviews,
     } = value;
 
     const [isOpenModalBook, setIsOpenModalBook] = useState(false);
+    const [readMore, setReadMore] = useState(false);
+
+    const handleReadMore=()=>{setReadMore(true)};
+    
 
     return (
         <ContainerTeacher>
@@ -100,15 +106,18 @@ export const TeacherItem = ({value}) => {
                 <NameText>Lesson Info: <Text>{lesson_info}</Text> </NameText>
                 <NameText>Conditions: <Text>{`${conditions}`}</Text> </NameText>
 
-                <ButtonReadMore type='button'>Read more</ButtonReadMore>
+                {/* <TextExperience>{experience}</TextExperience> */}
+               
 
-                <ReadMore reviews = {reviews}/>
+                {!readMore && <ButtonReadMore type='button' onClick={handleReadMore} >Read more</ButtonReadMore>}
+
+                {readMore && <ReadMore reviews = {reviews}/>}
 
                 <Levels levels = {levels}/>
 
-                <ButtoBook type="button" onClick={() => {
-              setIsOpenModalBook(true);}}>Book trial lesson</ButtoBook>
-                
+                {readMore && <ButtoBook type="button" onClick={() => {
+              setIsOpenModalBook(true);}}>Book trial lesson</ButtoBook>}
+
                 <ModalBookTrial 
                 isOpenModalBook={isOpenModalBook} 
                 setIsOpenModalBook={setIsOpenModalBook}
