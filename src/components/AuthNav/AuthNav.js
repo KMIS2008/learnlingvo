@@ -23,6 +23,7 @@ export const AuthNav=()=>{
 
     return (
          <NavContainer>
+            {!isLoggedIn && <>
                <svg width= '20px' height='20px'>
                    <use xlinkHref={sprite + '#icon-loginblue'} />
               </svg>
@@ -31,7 +32,8 @@ export const AuthNav=()=>{
 
             <ButtonRegistr type="button" onClick={() => {
               setIsOpenModalRegistration(true);}}>Registration
-            </ButtonRegistr>
+            </ButtonRegistr>            
+            </>}
 
               {isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
 

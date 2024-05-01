@@ -4,18 +4,24 @@ export const ContainerTeacher = styled.div`
 display: flex;
 gap: ${p=>p.theme.spacing(12)};
 margin-bottom: ${p=>p.theme.spacing(6)};
+width: 100%;
 `;
 
 export const Avatar = styled.div`
 position: relative;
-padding: ${p=>p.theme.spacing(3)};
-width: 120px;
+padding: ${p=>p.theme.spacing(2,5)};
+
+max-width:120px;
+width:100%;
 height: 120px;
 border-radius: 50%;
 border: 3px solid #FBE9BA;
 `;
 
 export const Img = styled.img`
+
+width: 96px;
+height: 96px;
 border-radius: 50%;
 `;
 
@@ -25,11 +31,19 @@ left: 85px;
 top: 19px;
 `;
 
+export const Container = styled.div`
+width:100%
+`;
+
 export const ContainerHeader = styled.div`
 margin-bottom: ${p=>p.theme.spacing(1)};
 display: flex;
 justify-content: space-between;
 align-items: center;
+`;
+
+export const SvgHeart = styled.svg`
+margin-left: ${p=>p.theme.spacing(11)};
 `;
 
 export const ContainerInfo = styled.div`
@@ -71,13 +85,13 @@ export const Text = styled.span`
 color: #121417;
 `;
 
-// export const TextExperience = styled.p`
-// margin-bottom:${p=>p.theme.spacing(11)};
-// font-family: Roboto, sans-serif;
-// font-size: 16px;
-// font-weight: 400;
-// line-height: 1,5;
-// `;
+ export const TextExperience = styled.p`
+ margin-bottom:${p=>p.theme.spacing(11)};
+ font-family: Roboto, sans-serif;
+ font-size: 16px;
+ font-weight: 400;
+ line-height: 1,5;
+ `;
 
 export const ButtonReadMore = styled.button`
 margin-top:${p=>p.theme.spacing(1)};

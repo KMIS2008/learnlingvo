@@ -3,14 +3,16 @@ import {Avatar,
         Img,
         IconImg,
         ContainerTeacher,
+        Container,
         ContainerHeader,
+        SvgHeart,
         ContainerInfo,
         SvgInfo,
         Name,
         NameText,
         Text,
         TextSpeaker,
-        // TextExperience,
+        TextExperience,
         ButtonReadMore, 
         ButtoBook} from './TeacherItem.styled';
 import {Levels} from '../Level/Level';
@@ -29,15 +31,18 @@ export const TeacherItem = ({value}) => {
         languages,
         lesson_info,
         conditions,
-        // experience,
+        experience,
         levels,
         reviews,
     } = value;
 
     const [isOpenModalBook, setIsOpenModalBook] = useState(false);
     const [readMore, setReadMore] = useState(false);
+    const [colorHeart, setColorHeart]= useState(false);
 
     const handleReadMore=()=>{setReadMore(true)};
+
+    const handleFavorite =()=>{setColorHeart(!colorHeart)}
     
 
     return (
@@ -51,7 +56,7 @@ export const TeacherItem = ({value}) => {
 
             </Avatar>
          
-            <div>
+            <Container>
 
                 <ContainerHeader>
                   <p>Languages</p>
@@ -59,7 +64,7 @@ export const TeacherItem = ({value}) => {
                   <ContainerInfo>
 
                     <p>
-                        <SvgInfo width= '12px' height='12px'>
+                        <SvgInfo width= '16px' height='16px'>
                             <use xlinkHref={sprite + '#icon-book-open'} />
                         </SvgInfo>
                         Lessons online
@@ -88,13 +93,14 @@ export const TeacherItem = ({value}) => {
 
                     <p>Price / 1 hour: {price_per_hour} </p>
 
-                    <svg width= '26px' height='26px'>
-                        <use xlinkHref={sprite + '#icon-heart'} />
-                    </svg>
+                    {!colorHeart && <SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                                        <use xlinkHref={sprite + '#icon-heart'} />
+                                      </SvgHeart>
+                                      }
 
-                    <svg width= '26px' height='26px'>
-                        <use xlinkHref={sprite + '#icon-hover'} />
-                    </svg>      
+                    {colorHeart && <SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                                     <use xlinkHref={sprite + '#icon-hover'} />
+                                   </SvgHeart> }
 
                   </ContainerInfo>
 
@@ -106,8 +112,7 @@ export const TeacherItem = ({value}) => {
                 <NameText>Lesson Info: <Text>{lesson_info}</Text> </NameText>
                 <NameText>Conditions: <Text>{`${conditions}`}</Text> </NameText>
 
-                {/* <TextExperience>{experience}</TextExperience> */}
-               
+                <TextExperience>{experience}</TextExperience>
 
                 {!readMore && <ButtonReadMore type='button' onClick={handleReadMore} >Read more</ButtonReadMore>}
 
@@ -126,7 +131,7 @@ export const TeacherItem = ({value}) => {
                 surname={surname}
                 />
 
-            </div>
+            </Container>
         </ContainerTeacher>
     )
 }

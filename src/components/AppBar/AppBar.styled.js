@@ -2,10 +2,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Header = styled.header`
+
 display: flex;
 justify-content: space-between;
 align-items: center;
 margin: auto;
+margin-bottom: ${p=>p.theme.spacing(12)};
 padding-left: ${p=>p.theme.spacing(12)};
 padding-right: ${p=>p.theme.spacing(12)};
 
