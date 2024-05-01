@@ -43,6 +43,6 @@ export const Comment = styled.p`
 
 font-family: Roboto, sans-serif;
 font-size: 16px;
-font-weight: 600;
+font-weight: 500;
 line-height: 1,5;
 `;
