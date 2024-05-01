@@ -15,7 +15,8 @@ width: 183px;
 height: 60px;
 border-radius: 12px;
 border: none;
-background-color: #F4C550;
+background-color: ${p=>p.theme.colors.yellow};
+
 
 font-family: Roboto, sans-serif;  
 font-size: 18px;

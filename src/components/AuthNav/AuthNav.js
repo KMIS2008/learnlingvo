@@ -33,7 +33,7 @@ export const AuthNav=()=>{
               setIsOpenModalRegistration(true);}}>Registration
             </ButtonRegistr>
 
-              {!isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
+              {isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
 
             <ModalLogin isModalOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
 
