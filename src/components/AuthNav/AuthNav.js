@@ -7,11 +7,14 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../database';
 import { useDispatch } from "react-redux";
 import {deleteToken} from '../../redux/AuthSlice';
+import { useSelector } from 'react-redux';
+import{selectIsLoggedIn} from '../../redux/selects';
 
 export const AuthNav=()=>{
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isOpenModalRegistration, setIsOpenModalRegistration] = useState(false);
     const dispatch = useDispatch();
+    const isLoggedIn = useSelector(selectIsLoggedIn);
 
     const handleLogOut = ()=>{
      signOut(auth);
@@ -27,9 +30,10 @@ export const AuthNav=()=>{
               setIsOpenModal(true);}} >Log in</ButtonLogin>
 
             <ButtonRegistr type="button" onClick={() => {
-              setIsOpenModalRegistration(true);}}>Registration</ButtonRegistr>
+              setIsOpenModalRegistration(true);}}>Registration
+            </ButtonRegistr>
 
-            <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>
+              {!isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
 
             <ModalLogin isModalOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
 
