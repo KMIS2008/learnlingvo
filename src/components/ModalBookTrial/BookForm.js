@@ -1,6 +1,11 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, } from 'react-hook-form';
 import * as Yup from 'yup';
+import {Title, RadioWrapper, LabelRadio, LabelName, Input, Button} from './BookForm.styled';
+// import {
+//   MdOutlineRadioButtonChecked,
+//   MdOutlineRadioButtonUnchecked,
+// } from 'react-icons/md';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -11,18 +16,19 @@ const SignupSchema = Yup.object().shape({
   });
 
   const options= [
-      { name: 'Career and business',  id: '1' },
-      { name: 'Lesson for kids', id: '2' },
-      { name: 'Living abroad', id: '3' },
-      { name: 'Exams and coursework', id: '4' },
-      { name: 'Culture, travel or hobby', id: '5' },
+      { name: 'Career and business',  id: '1', value: 'careerAndBusiness'},
+      { name: 'Lesson for kids', id: '2', value: 'lessonForKids'},
+      { name: 'Living abroad', id: '3', value: 'livingAbroad'},
+      { name: 'Exams and coursework', id: '4', value: 'examsAndCoursework' },
+      { name: 'Culture, travel or hobby', id: '5', value: 'cultureTravelOrHobby'},
     ];
 
 export function BookForm (){
     const {
         register,
         handleSubmit,
-        reset
+        reset,
+   
       } = useForm({ validationSchema:SignupSchema});
 
       const[selectedOptions, setSelectedOptions]=useState();
@@ -34,26 +40,47 @@ export function BookForm (){
       return (
         <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <p>What is your main reason for learning English?</p>
+          <Title>What is your main reason for learning English?</Title>
 
-          {options.map(option => (
-          <label key={option.id}>
+          <RadioWrapper>
+ 
+          {options.map(({ name, value,id }) => (
+          <LabelRadio key={id}
+          checkedcolor={
+            selectedOptions === value ? "#F4C550" : undefined
+          }>
+            
             <input
               type="radio"
               name="topic"
-              value={option.name}
+              value={value}
               checked
 
-              onChange={(e) => setSelectedOptions(e.target.value)}
-              {...register('phone', { required: true })}
+              // checked={selectedOptions === value}
+              onChange={() => setSelectedOptions(value)}
+
+              {...register('topic', { required: true })}
             />
-            {option.name}
-          </label>
-        ))}
+             {/* {selectedOptions === value ? (
+                    <MdOutlineRadioButtonChecked size={24} color="#F4C550" />
+                  ) : (
+                    <MdOutlineRadioButtonUnchecked
+                      size={24}
+                      color="#636366"
+                    />
+                  )} */}
+
+              <LabelName>{name}</LabelName>
+            
+          </LabelRadio>
+        ))}  
+
+          </RadioWrapper>
+
         </div>       
 
          <div>
-          <input type="text" 
+          <Input type="text" 
                  id="name" 
                  name="name" 
                  placeholder='Full Name' 
@@ -61,7 +88,7 @@ export function BookForm (){
         </div>
   
         <div>
-          <input type="email" 
+          <Input type="email" 
                  id="email" 
                  name="email" 
                  placeholder='Email' 
@@ -69,7 +96,7 @@ export function BookForm (){
         </div>
   
         <div>
-          <input type="tel" 
+          <Input type="tel" 
                  id="phone" 
                  name="phone" 
                  placeholder='Phone number' 
@@ -78,7 +105,7 @@ export function BookForm (){
                  />
         </div>
   
-        <button type="submit">Book</button>
+        <Button type="submit">Book</Button>
       </form>
       )
 
