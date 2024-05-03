@@ -9,7 +9,7 @@ import { useState } from "react";
 export const TeacherList =({teachers})=>{
   const [countTecher, setCountTeacher]=useState(4)
 const handleLoadMore = ()=>{
-  setCountTeacher(prevCount=>Math.min(prevCount+4))
+  setCountTeacher(prevCount=>prevCount+4)
 }
 
     // const teachers =  useSelector(selectTeachers);

@@ -9,21 +9,6 @@ import {
   store } from './redux/store';
 // import { PersistGate } from 'redux-persist/integration/react';
 
-// import * as firebase from 'firebase';
-
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBhyNb9k6wBqjaqz_c59ZhYvYSAb22LpBw",
-//   authDomain: "learnlingvo-fb7e1.firebaseapp.com",
-//   databaseURL: "https://learnlingvo-fb7e1-default-rtdb.europe-west1.firebasedatabase.app",
-//   projectId: "learnlingvo-fb7e1",
-//   storageBucket: "learnlingvo-fb7e1.appspot.com",
-//   messagingSenderId: "576098443295",
-//   appId: "1:576098443295:web:fe35ff740f67b23418752a",
-//   measurementId: "G-DD4PDXLMXL"
-// }
-
-// firebase.initializeApp(firebaseConfig);
 
 const theme = {
   colors: {
@@ -46,15 +31,17 @@ const theme = {
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <BrowserRouter basename="learnlingvo">
-    {/* <PersistGate loading={null} persistor={persistor}> */}
+   
         <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}  
+          <BrowserRouter basename="learnlingvo">  
           <ThemeProvider theme = {theme}>
-           <App />
-          </ThemeProvider>        
-        </Provider>
-      {/* </PersistGate> */}
-    </BrowserRouter>
+             <App />
+          </ThemeProvider>  
+             </BrowserRouter>      
+      {/* </PersistGate> */}       
+       </Provider>
+ 
   </React.StrictMode>
 );
 

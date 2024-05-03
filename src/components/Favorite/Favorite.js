@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux';
-import {selectFavourite} from '../../redux/selectors';
-import {TeacherItem} from '../Favorite/Favorite';
+import {selectFavourite} from '../../redux/selects';
+import { TeacherItem } from "../TeacherItem/TeacherItem";
+
+import { nanoid } from 'nanoid';
 
 export const Favorite = () => {
     const favorites = useSelector(selectFavourite);
 return(
     
     <ul>
-    {favorites.map((item) => (
-        <TeacherItem key={item._id} value={item} />
+    {favorites.map((favorite) => (
+        <TeacherItem key = {nanoid()} value={favorite} />
       ))}
     </ul>
     

@@ -19,6 +19,11 @@ import {Levels} from '../Level/Level';
 import {ReadMore} from '../ReadMore/ReadMore';
 import { useState } from "react";
 import { ModalBookTrial } from 'components/ModalBookTrial/ModalBookTrial';
+import {addFavorite, removeFavorite} from '../../redux/teacherSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {selectFavourite, selectIsLoggedIn} from '../../redux/selects';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const TeacherItem = ({value}) => {
 
@@ -36,15 +41,28 @@ export const TeacherItem = ({value}) => {
         reviews,
     } = value;
 
+    const dispatch= useDispatch();
+
     const [isOpenModalBook, setIsOpenModalBook] = useState(false);
     const [readMore, setReadMore] = useState(false);
-    const [colorHeart, setColorHeart]= useState(false);
+
+    const isLoggedIn=useSelector(selectIsLoggedIn);
+    const favorites = useSelector(selectFavourite);
+
+    const isFavorite = favorites.some((favorite) => favorite.surname === value.surname)
 
     const handleReadMore=()=>{setReadMore(true)};
 
-    const handleFavorite =()=>{setColorHeart(!colorHeart)}
+    const handleFavorite =()=>{
+        if(isLoggedIn){
+           
+           if(!isFavorite)
+               { dispatch(addFavorite(value))}
+           else {dispatch(removeFavorite(value))}
+        }
+        else {toast.warn('You must Log in',{theme: "colored",});}
+}
     
-
     return (
         <ContainerTeacher>
             <Avatar>
@@ -93,14 +111,14 @@ export const TeacherItem = ({value}) => {
 
                     <p>Price / 1 hour: {price_per_hour} </p>
 
-                    {!colorHeart && <SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                    {!isFavorite? (<SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
                                         <use xlinkHref={sprite + '#icon-heart'} />
-                                      </SvgHeart>
-                                      }
-
-                    {colorHeart && <SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                                      </SvgHeart> )
+                                :
+                                  (<SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
                                      <use xlinkHref={sprite + '#icon-hover'} />
-                                   </SvgHeart> }
+                                   </SvgHeart> )  
+                                      }
 
                   </ContainerInfo>
 
@@ -132,6 +150,7 @@ export const TeacherItem = ({value}) => {
                 />
 
             </Container>
-        </ContainerTeacher>
+            <ToastContainer/>
+        </ContainerTeacher >
     )
 }
