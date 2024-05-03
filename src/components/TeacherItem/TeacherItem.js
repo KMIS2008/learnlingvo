@@ -19,9 +19,8 @@ import {Levels} from '../Level/Level';
 import {ReadMore} from '../ReadMore/ReadMore';
 import { useState } from "react";
 import { ModalBookTrial } from 'components/ModalBookTrial/ModalBookTrial';
-import {addFavorite, removeFavorite} from '../../redux/teacherSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import {selectFavourite, selectIsLoggedIn} from '../../redux/selects';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn} from '../../redux/selects';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -41,24 +40,43 @@ export const TeacherItem = ({value}) => {
         reviews,
     } = value;
 
-    const dispatch= useDispatch();
-
     const [isOpenModalBook, setIsOpenModalBook] = useState(false);
     const [readMore, setReadMore] = useState(false);
+    const [isHeart, setisHeart] = useState(false);
 
     const isLoggedIn=useSelector(selectIsLoggedIn);
-    const favorites = useSelector(selectFavourite);
+    
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     const isFavorite = favorites.some((favorite) => favorite.surname === value.surname)
+
+    function addToFavorites(value) {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+         favorites = [...favorites, value];
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+      }
+
+      function removeFromFavorites(value) {
+  
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      
+        const person = favorites.filter(person => person.name !== value.name );
+          localStorage.setItem('favorites', JSON.stringify(person));
+        
+      }
+      
+
 
     const handleReadMore=()=>{setReadMore(true)};
 
     const handleFavorite =()=>{
         if(isLoggedIn){
+            setisHeart(!isHeart)
            
            if(!isFavorite)
-               { dispatch(addFavorite(value))}
-           else {dispatch(removeFavorite(value))}
+                {addToFavorites(value)}
+            
+           else { removeFromFavorites(value) }
         }
         else {toast.warn('You must Log in',{theme: "colored",});}
 }

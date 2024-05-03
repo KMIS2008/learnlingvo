@@ -1,6 +1,7 @@
 import {ContainerFlex, ContainerHero, Title, TitleSpan,TextHome, ButtonStart, Image} from './Home.styled';
 import girl from '../../assets/girl.jpg';
 import {Statistic} from '../Statistic/Statistic';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
     return (
@@ -15,7 +16,10 @@ export const Home = () => {
                 proficiency to new heights by connecting with highly qualified and experienced tutors.
               </TextHome>   
 
-              <ButtonStart type='button'>Get started</ButtonStart>    
+              <Link to="/teacher">
+                 <ButtonStart type='button'>Get started</ButtonStart>          
+              </Link>
+
            </ContainerHero>
 
            <Image src={girl} alt='Funny girl'/>

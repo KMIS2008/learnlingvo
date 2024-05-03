@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
-import {selectFavourite} from '../../redux/selects';
 import { TeacherItem } from "../TeacherItem/TeacherItem";
 
 import { nanoid } from 'nanoid';
 
+
 export const Favorite = () => {
-    const favorites = useSelector(selectFavourite);
+   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
 return(
     
     <ul>
