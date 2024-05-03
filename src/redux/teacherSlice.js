@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const favoriteSlice = createSlice({
-    name: "favorite",
+
+const teacherSlice = createSlice({
+    name: "teachers",
     initialState: {
       isLoading: false,
       isFavorite: [],
@@ -9,15 +10,14 @@ const favoriteSlice = createSlice({
 
     reducers: {
       addFavorite(state, action) {
-        const newItem = action.payload;
-        state.isFavorite.push(newItem);
+        state.isFavorite.push(action.payload);
       },
       removeFavorite(state, action) {
-        state.isFavorite = state.isFavorite.filter((item) => item._id !== action.payload._id);
+        state.isFavorite = state.isFavorite.filter((item) => item.surname !== action.payload.surname);
       },
     },
 
   });
   
-  export const favoriteReducer = favoriteSlice.reducer;
-  export const { addFavorite, removeFavorite } = favoriteSlice.actions;
+  export const teacherReducer = teacherSlice.reducer;
+  export const { addFavorite, removeFavorite } = teacherSlice.actions;
