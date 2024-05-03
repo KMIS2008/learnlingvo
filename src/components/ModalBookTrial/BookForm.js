@@ -27,7 +27,7 @@ export function BookForm (){
     const {
         register,
         handleSubmit,
-        // reset,
+        reset,
    
       } = useForm({ validationSchema:SignupSchema});
 
@@ -35,6 +35,7 @@ export function BookForm (){
 
       const onSubmit = (data) => {
         console.log(data);
+        reset()
       };
 
       return (
@@ -55,8 +56,6 @@ export function BookForm (){
               name="topic"
               value={value}
               checked
-
-              // checked={selectedOptions === value}
               onChange={() => setSelectedOptions(value)}
 
               {...register('topic', { required: true })}
@@ -100,7 +99,6 @@ export function BookForm (){
                  id="phone" 
                  name="phone" 
                  placeholder='Phone number' 
-                //  ref={register({ required: true })} 
                  {...register('phone', { required: true })}
                  />
         </div>
