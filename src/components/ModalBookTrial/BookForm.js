@@ -33,8 +33,7 @@ export function BookForm (){
 
       const[selectedOptions, setSelectedOptions]=useState();
 
-      const onSubmit = (data) => {
-        console.log(data);
+      const onSubmit = () => {
         reset()
       };
 

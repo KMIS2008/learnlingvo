@@ -1,4 +1,5 @@
 export const languages= [
+    "",
     'English',
     'Spanish',
     'Polish',
@@ -11,6 +12,7 @@ export const languages= [
 ]
 
 export const levels=[
+    "",
     'A1 Beginner',
     'A2 Elementary',
     'B1 Intermediate',
@@ -19,4 +21,4 @@ export const levels=[
     'C2 Proficient',
 ]
 
-export const prices=[ 10, 20, 30, 40]
+export const prices=[ "", 10, 20, 30, 40]

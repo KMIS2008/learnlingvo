@@ -1,9 +1,5 @@
 import { database } from "components/database";
-// import { ref, child, get } from 'firebase/database';
-import { ref, get,
-  // child,
-  //  query, orderByKey, limitToFirst
-   } from 'firebase/database';
+import { ref, get} from 'firebase/database';
 
 export const fetchTeachers = async ({setTeachers}) => {
     try {
@@ -17,3 +13,4 @@ export const fetchTeachers = async ({setTeachers}) => {
       console.error('Loading error', error.message);
     }
   };
+

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { AuthReducer } from "./AuthSlice";
-import {teacherReducer} from './teacherSlice';
+import {filterReducer} from './filterSlice';
 import {
   FLUSH,
   persistStore,
@@ -19,16 +19,11 @@ const persistConfig = {
   whitelist: ['token'],
 };
 
-const teachersPersistConfig = {
-  key: 'teachers',
-  storage,
-  whitelist: ['favorites'],
-};
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, AuthReducer),
-    teachers: persistReducer(teachersPersistConfig, teacherReducer)
+    filter: filterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

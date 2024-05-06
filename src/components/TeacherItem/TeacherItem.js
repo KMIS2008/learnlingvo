@@ -62,11 +62,8 @@ export const TeacherItem = ({value}) => {
       
         const person = favorites.filter(person => person.name !== value.name );
           localStorage.setItem('favorites', JSON.stringify(person));
-        
       }
       
-
-
     const handleReadMore=()=>{setReadMore(true)};
 
     const handleFavorite =()=>{
