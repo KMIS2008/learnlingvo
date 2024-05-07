@@ -43,7 +43,6 @@ export function Login() {
 
           dispatch(addToken(accessToken));
 
-          // dispatch(addToken(login.user.accessToken));
           reset()
           return login.user;
   

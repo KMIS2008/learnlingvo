@@ -9,28 +9,6 @@ font-weight: 600;
 line-height: 1,33;
 `;
 
-export const RadioWrapper = styled.div`
-margin-bottom: ${p=>p.theme.spacing(5)};
-display: flex;
-flex-direction: column;
-
-&:checked{
-    background-color: #F4C550}
-`;
-
-export const LabelRadio = styled.label`
-margin-bottom: ${p=>p.theme.spacing(5)};
-
-font-size: 16px;
-font-family:  Roboto, sans-serif;
-line-height: 1,38;
-color: #121417;
-`;
-
-export const LabelName = styled.span`
-padding-left: ${p=>p.theme.spacing(2)};
-`;
-
 export const Input = styled.input`
 margin-bottom: ${p=>p.theme.spacing(4)};
 padding-left: ${p=>p.theme.spacing(4)};
@@ -58,5 +36,51 @@ background-color: ${p=>p.theme.colors.yellow};
 border-radius: 12px;
 `;
 
-// &:checked{
-//     background-color: #F4C550}
+export const RadioWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${p=>p.theme.spacing(5)};
+`;
+
+export const LabelRadio = styled.label`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  margin-bottom: ${p=>p.theme.spacing(5)};
+
+  font-size: 16px;
+  font-family:  Roboto, sans-serif;
+  line-height: 1,38;
+  color: #121417;
+`;
+
+export const InputRadio = styled.input`
+  display: none;
+`;
+
+export const RadioButtonIndicator = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(18, 20, 23, 0.2); /* Исходный стиль */
+  border-radius: 50%;
+  transition: border-color 0.3s ease-in-out;
+  margin-right: 5px;
+
+  ${InputRadio}:checked + & {
+    border-color: #f4c550; /* Новый цвет рамки при нажатии на радиокнопку */
+  }
+`;
+
+export const CheckedIcon = styled.svg`
+
+  visibility: hidden;
+
+  ${InputRadio}:checked + ${RadioButtonIndicator} & {
+    visibility: visible;
+  }
+`;
+

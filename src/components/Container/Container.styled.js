@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerWrapper = styled.div`
-
+width: 100%;
 min-width: 320px;
 max-width: 1440px;
 padding: 20px 30px;

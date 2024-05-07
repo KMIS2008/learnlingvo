@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { useForm, } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import {Title, RadioWrapper, LabelRadio, LabelName, Input, Button} from './BookForm.styled';
-// import {
-//   MdOutlineRadioButtonChecked,
-//   MdOutlineRadioButtonUnchecked,
-// } from 'react-icons/md';
+import {Title, RadioWrapper, LabelRadio, InputRadio, Input, Button, RadioButtonIndicator, CheckedIcon} from './BookForm.styled';
+
+
+import sprite from '../../assets/sprite.svg';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -31,9 +29,8 @@ export function BookForm (){
    
       } = useForm({ validationSchema:SignupSchema});
 
-      const[selectedOptions, setSelectedOptions]=useState();
-
-      const onSubmit = () => {
+      const onSubmit = (data) => {
+        console.log(data)
         reset()
       };
 
@@ -43,37 +40,23 @@ export function BookForm (){
           <Title>What is your main reason for learning English?</Title>
 
           <RadioWrapper>
- 
-          {options.map(({ name, value,id }) => (
-          <LabelRadio key={id}
-          checkedcolor={
-            selectedOptions === value ? "#F4C550" : undefined
-          }>
-            
-            <input
-              type="radio"
-              name="topic"
-              value={value}
-              checked
-              onChange={() => setSelectedOptions(value)}
-
-              {...register('topic', { required: true })}
-            />
-             {/* {selectedOptions === value ? (
-                    <MdOutlineRadioButtonChecked size={24} color="#F4C550" />
-                  ) : (
-                    <MdOutlineRadioButtonUnchecked
-                      size={24}
-                      color="#636366"
-                    />
-                  )} */}
-
-              <LabelName>{name}</LabelName>
-            
-          </LabelRadio>
-        ))}  
-
-          </RadioWrapper>
+      {options.map(({ name, value, id }) => (
+        <LabelRadio key={id}>
+          <InputRadio
+            type="radio"
+            name="topic"
+            value={value}
+            {...register('topic', { required: true })}
+          />
+          <RadioButtonIndicator>
+            <CheckedIcon width= '10px' height='10px'>
+              <use xlinkHref={sprite + '#icon-circle'} />
+            </CheckedIcon>
+          </RadioButtonIndicator>
+          <span>{name}</span>
+        </LabelRadio>
+      ))}
+    </RadioWrapper>
 
         </div>       
 
