@@ -45,10 +45,6 @@ export function Registration() {
       password
     )
 
-    // const accessToken = await login.user.getIdToken();
-
-    // dispatch(addToken(accessToken));
-
     dispatch(addToken(result.user.accessToken));
     reset();
     return result;
@@ -56,7 +52,6 @@ export function Registration() {
     throw error;
   }}
     
-
   return (
 
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,6 +84,5 @@ export function Registration() {
        </div>
       <Button type="submit">Sign Up</Button>
   </form>
-    
   );
 }

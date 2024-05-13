@@ -16,9 +16,13 @@ export const AuthNav=()=>{
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(selectIsLoggedIn);
 
-    const handleLogOut = ()=>{
-     signOut(auth);
-     dispatch(deleteToken())
+    const handleLogOut = async  ()=>{
+     try {
+       await signOut(auth)
+       dispatch(deleteToken())
+     } catch (error) {
+      throw error;
+     }
     }
 
     return (
@@ -43,7 +47,6 @@ export const AuthNav=()=>{
             isOpenModalRegistration={isOpenModalRegistration} 
             setIsOpenModalRegistration={setIsOpenModalRegistration}/>
 
-        
          </NavContainer>
     )
    

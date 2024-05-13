@@ -17,7 +17,6 @@ border-radius: 12px;
 border: none;
 background-color: ${p=>p.theme.colors.yellow};
 
-
 font-family: Roboto, sans-serif;  
 font-size: 18px;
 font-weight: 800;

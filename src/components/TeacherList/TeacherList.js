@@ -1,7 +1,4 @@
 import { TeacherItem } from "components/TeacherItem/TeacherItem";
-// import { useSelector } from 'react-redux';
-// import {selectTeachers} from '../../redux/selectors';
-
 import { nanoid } from 'nanoid';
 import {Container, ListContainer, Button} from './TeacherList.styled'
 import { useState } from "react";

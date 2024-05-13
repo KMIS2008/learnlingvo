@@ -65,13 +65,13 @@ export const RadioButtonIndicator = styled.div`
   align-items: center;
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(18, 20, 23, 0.2); /* Исходный стиль */
+  border: 2px solid rgba(18, 20, 23, 0.2); 
   border-radius: 50%;
   transition: border-color 0.3s ease-in-out;
   margin-right: 5px;
 
   ${InputRadio}:checked + & {
-    border-color: #f4c550; /* Новый цвет рамки при нажатии на радиокнопку */
+    border-color: #f4c550; 
   }
 `;
 

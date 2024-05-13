@@ -12,7 +12,6 @@ color: #121417;
 outline: none;
 `
 
-
 export const Button = styled.button`
 margin-top: ${p=>p.theme.spacing(5)};
 width:100%;

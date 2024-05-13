@@ -8,8 +8,6 @@ export const ItemContainer = styled.li`
 margin-bottom: ${p=>p.theme.spacing(8)};
 `;
 
-
-
 export const Container = styled.div`
 display: flex;
 gap: ${p=>p.theme.spacing(2)};
@@ -40,7 +38,6 @@ align-items: center;
 `;
 
 export const Comment = styled.p`
-
 font-family: Roboto, sans-serif;
 font-size: 16px;
 font-weight: 500;

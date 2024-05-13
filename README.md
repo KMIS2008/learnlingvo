@@ -1,65 +1,54 @@
-Camper is a contract for a company that provides services for renting campers in Ukraine. The drawer is folded on 3 sides.
+Наш проект - це веб-застосунок для компанії, що пропонує послуги з онлайн вивчення мов. Він допомагає користувачам знайти та зареєструватися на уроки з кваліфікованими викладачами.
 
-Home page with a detailed description of the services the company provides.
+Основні технології, які були використані в цьому проекті:
+React: для створення інтерактивного інтерфейсу користувача та роботи з компонентами.
+Firebase: для зберігання даних користувачів, авторизації та роботи з реальним часом бази даних, створення колекції викладачів.
+React Hook Form & Yup: для реалізації форм реєстрації, авторизації, логауту та бронювання занять з мінімальною валідацією полів.
+Styled Components: для стилізації компонентів та дотримання принципів гнучкої верстки.
 
-On the other side there is a catalog of campers of various configurations that drivers can filter for the location of the same type.
+Макет включає в себе три основні сторінки:
 
-The third side is to avenge the shock that they gave to the koristuvach in love.
+Home: сторінка з перевагами компанії та посиланням на сторінку "Teachers".
+Teachers: сторінка з переліком викладачів, яких можна фільтрувати за різними параметрами.
+Favorites: приватна сторінка з обраними викладачами, доступна лише авторизованим користувачам.
 
-Every time you click on the button that looks like a “heart” on the shock card, you will be taken to the list of your favorites, and the color of the button will change.
+Реалізовано відображення функціоналу на сторінці "Teachers", включаючи завантаження додаткових карток викладачів, додавання викладачів до обраних та фільтрацію за різними параметрами.
+Також додана можливість отриманняя детальної інформації про викладача та бронювання пробного заняття на відповідній сторінці.
+Після оновлення сторінки інформація об обраних викладачах для авторизованих користувачів та фіксація їх стану зберігається.
 
-When you click on the button next to the “heart” view again, the favorites will be removed from the list of favorites, and the color of the button will change to full size.
+Використан React Router для реалізації маршрутизації та навігації між сторінками.
+Доданна фільтрація викладачів за мовою викладання, рівнем знань учнів та ціною за годину занять.
 
-Each time you click on the Show more button, a modal window with detailed information about the camera opens.
-
-The modal window can be closed by clicking on the button that looks like a “cross”, by clicking on backdrop and pressing the Esc key.
-
-The modal window contains information about the features of the camper and its content.
-
-The modal window also contains a form for making a reservation for a camper, which consists of the fields name, email, booking date and comment. The fields name, email, booking date are required until filled in and are checked for the validity of the entered values. (In the case of invalid data, the form is not submitted; in the case of a valid form, the page is updated).
-
-For robots with this list, a personal backend has been created for accessing the additional UI service https://mockapi.io/.
-
-Zastosunku has the following routes:
-
-“/” - home page with a detailed description of the services that the company provides
-
-“/catalog” - a page to display a catalog of campers of various configurations
-
-“/favorites” - a page with comments (designed at your discretion) that were given to the koristuvach in love
-
-If the customer searches for a route that he does not understand, he is redirected to his home page.
+Запуск проєкту виконується наступним чином:
+1. Клонуйте репозиторій.
+2. Встановіть необхідні залежності за допомогою npm install.
+3. Запустіть проєкт за допомогою npm run start.
 
 
 
-Camper - це застосунок для компанії, що надає послуги надання в Україні камперів в оренду. Застосунок складається з 3х сторінок.
 
-Домашня сторінка з загальним описом послуг, що надає компанія. 
+Our project - it веб-застосунок for a company that offers services in on-line of study of languages. He helps users to find and register oneself to lessons with skilled teachers.
 
-Друга сторінка містить каталог камперів різної комплектації, які користувач може фільтрувати за місцем знаходження, обладнанням та типом.
+Basic technologies that were used in this project :
+React: for creation of interactive man-machine interface and work with components.
+Firebase: for storage of these users, authorizing and work with the real time of database, creation of collection of teachers.
+React Hook Form & Yup: for realization of forms of registration, authorizing, логауту and reserving of employments after minimum валідацією of the fields.
+Styled Components : for стилізації of components and observance of principles of flexible make-up.
 
-Третя сторінка містить оголошення, які були додані користувачем в улюблені.
+A layout includes for itself three basic pages:
 
-У разі кліку по кнопці у вигляді “серця” на картці оголошення воно додаваться до списку улюблених,  а колір кнопки змінюється.
+Home: page with advantages of company and reference to the page of "Teachers".
+Teachers: page with the list of teachers that can be filtered on different parameters.
+Favorites: private page with select teachers, accessible to the only authorized users.
 
-У разі повторного кліку по кнопці у вигляді “серця” оголошення буде видалятися зі списку улюблених,  а колір кнопки змінится до початкового стану.
+A reflection to the functional is realized on the page of "Teachers", including loading of additional cards of teachers, addition of teachers to select and filtration on different parameters.
+The also added possibility of отриманняя of the detailed information is about a teacher and reserving of trial employment on a corresponding page.
+After updating of page information is at select teachers for the authorized users and fixing of their state is kept.
 
-У разі кліку по кнопці Show more відкривається модальне вікно з детальною інформацією про кампер.
+Використан React Router for realization of routing and navigation between pages.
+Доданна filtration of teachers after the language of teaching, level of knowledge of students and price in a hour employments.
 
-Модальне вікно закривається по кліку на кнопку у вигляді “хрестика”, по кліку на backdrop  та натисканню на клавішу Esc.
-
-В модальному вікні міститься інформація щодо особливостей кампера і відгуків про нього. 
-
-В модальному вікні також міститься форма для оформлення бронювання камперу, що складається з полів name, email, booking date і comment. Поля name, email, booking date є обовʼязковими до заповнення і проходять перевірку на валідність введених значень.(У випадку невалідних даних форма не відправляється, у випадку валідної форми - сторінка оновлюється).
-
-Для роботи зі списком оголошень створен персональний бекенд для розробки за допомогою UI-сервісу https://mockapi.io/. 
-
-У застосунку є такі маршрути:
-
-“/” - домашня сторінка з загальним описом послуг, що надає компанія
-
-“/catalog” - сторінка, що містить каталог камперів різної комплектації
-
-“/favorites” - сторінка з оголошеннями(оформлення на ваш розсуд), які були додані користувачем в улюблені
-
-Якщо користувач зайшов за маршрутом, якого не існує, його перенаправляє на  домашню сторінку.
+The start of проєкту is executed as follows:
+1. Clone репозиторій.
+2. Set necessary dependences by means of npm install.
+3. Start проєкт by means of npm run start.

@@ -1,8 +1,6 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import {Title, RadioWrapper, LabelRadio, InputRadio, Input, Button, RadioButtonIndicator, CheckedIcon} from './BookForm.styled';
-
-
 import sprite from '../../assets/sprite.svg';
 
 const SignupSchema = Yup.object().shape({

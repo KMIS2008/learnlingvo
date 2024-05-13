@@ -25,7 +25,6 @@ export function Login() {
     handleSubmit,
     formState: { isSubmitting }, 
     reset
-    // formState: { errors },
   } = useForm({ validationSchema:SignupSchema});
 
   const onSubmit = async  (data, e) => {
@@ -49,7 +48,6 @@ export function Login() {
     } catch (error) {
       console.log(error)
     }
-
   };
 
   const handlePassword = evt => {
@@ -60,8 +58,7 @@ export function Login() {
   return (
 
     <form onSubmit={handleSubmit(onSubmit)}>
-
-      
+    
       <Input type="email" id = "email" placeholder='Email' {...register('email', { required: true })} />
       <div>
          <Input type={isPasswordVisible ? 'text' : 'password'} id = "password" placeholder='Password' {...register('password', { required: true })} />
@@ -73,11 +70,8 @@ export function Login() {
          </ButtonEye>        
       </div>
 
-    
-  
     <Button type="submit" disabled={isSubmitting}>Log In</Button>
-  </form>
-    
+  </form>   
   );
 }
 

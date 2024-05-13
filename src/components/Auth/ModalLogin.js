@@ -57,10 +57,7 @@ export const ModalLogin = ({ isModalOpen, setIsOpen, }) => {
 
          <Login/>
 </Container>
-
-
       </Modal>
-      
       </>
     );
   }; 

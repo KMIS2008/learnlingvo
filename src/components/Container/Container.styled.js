@@ -8,5 +8,4 @@ padding: 20px 30px;
 margin: auto;
 padding-top: ${p=>p.theme.spacing(4)};
 padding-bottom: ${p=>p.theme.spacing(4)};
-
 `

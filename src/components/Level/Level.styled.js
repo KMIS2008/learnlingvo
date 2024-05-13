@@ -7,12 +7,10 @@ gap: ${p=>p.theme.spacing(2)};
 `;
 
 export const Button = styled.li`
-
 margin-bottom: ${p=>p.theme.spacing(6)};
 
 border: 1px solid rgba(18, 20, 23, 0.2);
 border-radius: 35px;
-
 
 font-family: Roboto, sans-serif;  
 font-size: 14px;

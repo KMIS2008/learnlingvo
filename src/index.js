@@ -5,9 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from 'styled-components';
 import { 
-  persistor, 
   store } from './redux/store';
-import { PersistGate } from 'redux-persist/integration/react';
 
 
 const theme = {
@@ -28,22 +26,17 @@ const theme = {
   spacing: value => `${value * 4}px`,
 }
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-   
+    <BrowserRouter basename="/learnlingvo">
+  
         <Provider store={store}>
-      {/* <PersistGate loading={<p>Loading...</p>} persistor={persistor}>   */}
-          <BrowserRouter basename="learnlingvo">  
-          <ThemeProvider theme = {theme}>
-             <App />
-          </ThemeProvider>  
-             </BrowserRouter>      
-      {/* </PersistGate>        */}
-       </Provider>
- 
+          <ThemeProvider theme={theme}> 
+           <App />
+          </ThemeProvider>
+        </Provider>
+
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-

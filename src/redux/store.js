@@ -19,12 +19,12 @@ const persistConfig = {
   whitelist: ['token'],
 };
 
-
 export const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, AuthReducer),
     filter: filterReducer,
   },
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -34,27 +34,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import { catalogReducer } from "./teacherSlice";
-// import {
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from "redux-persist";
-
-// export const store = configureStore({
-//   reducer: {
-//     teacher: catalogReducer,
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     }),
-// });

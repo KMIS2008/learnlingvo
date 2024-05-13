@@ -1,6 +1,7 @@
 import { database } from "components/database";
 import { ref, get} from 'firebase/database';
 
+
 export const fetchTeachers = async ({setTeachers}) => {
     try {
       const dbRef = ref(database, '/');

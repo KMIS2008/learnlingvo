@@ -39,7 +39,6 @@ color: #121417;
 `;
 
 export const ButtonStart = styled.button`
-
 width: 267px;
 height: 60px;
 
@@ -61,17 +60,6 @@ width: 568px;
 height: 530px;
 border-radius: 30px;
 `;
-
-
-export const Welcom = styled.p`
-/* display: block;
-font-size: 30px;
-margin-top: ${p=>p.theme.spacing(10)};
-margin-bottom: ${p=>p.theme.spacing(20)};
-padding-left:${p=>p.theme.spacing(60)};
-padding-top: ${p=>p.theme.spacing(20)}; */
-`;
-
 
 
 
