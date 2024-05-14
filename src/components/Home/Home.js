@@ -1,5 +1,6 @@
 import {ContainerFlex, ContainerHero, Title, TitleSpan,TextHome, ButtonStart, Image} from './Home.styled';
 import girl from '../../assets/girl.jpg';
+import girl2 from '../../assets/girl2.png'
 import {Statistic} from '../Statistic/Statistic';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,12 +24,14 @@ export const Home = () => {
              >
                   Get started
                </ButtonStart>          
-             
 
            </ContainerHero>
 
-           <Image src={girl} alt='Funny girl'/>
-          
+           <Image
+              srcSet={`${girl} 1x, ${girl2} 2x`}
+              src={girl}
+              alt="Funny girl"
+            /> 
         </ContainerFlex>
 
         <Statistic/>
