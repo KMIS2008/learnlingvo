@@ -101,6 +101,12 @@ width: 78px;
 height: 24px;
 text-decoration: underline;
 border: none;
+
+cursor: pointer;
+
+&:hover {
+    background-color: ${p=>p.theme.colors.hover};
+  }
 `;
 
 export const ButtoBook = styled.button`
@@ -114,6 +120,8 @@ font-family:Roboto, sans-serif;
 font-size: 18px;
 font-weight: 800;
 line-height: 1,56;
+
+cursor: pointer;
 
 &:hover {
     background-color: ${p=>p.theme.colors.hover};

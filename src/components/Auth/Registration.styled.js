@@ -27,5 +27,11 @@ text-align: center;
 border-radius: 12px;
 border: none;
 background-color:${p=>p.theme.colors.yellow}; 
+
+cursor: pointer;
+
+&:hover {
+  background-color: ${p=>p.theme.colors.hover};
+  }
 `
 

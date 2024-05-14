@@ -34,6 +34,12 @@ height: 60px;
 
 background-color: ${p=>p.theme.colors.yellow};
 border-radius: 12px;
+
+cursor: pointer;
+
+&:hover {
+  background-color: ${p=>p.theme.colors.hover};
+  }
 `;
 
 export const RadioWrapper = styled.div`

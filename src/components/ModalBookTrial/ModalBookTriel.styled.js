@@ -10,7 +10,6 @@ display: block;
 position:absolute;
 right: 0; top: 0;
 border: none;
-
 `
 export const Title = styled.h2`
 padding-top: ${p=>p.theme.spacing(10)};
