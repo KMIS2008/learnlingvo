@@ -8,17 +8,21 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../database';
 import {addToken} from '../../redux/AuthSlice';
 
+
 const SignupSchema = Yup.object().shape({
     email: Yup.string().email("Email must contait @").required('Required'),
     password: Yup.string().min(6, "Password contain min 6 symbols").required('Required'),
   });
 
 
-export function Login() {
+export function Login({setIsOpen}) {
   const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [visibility, setVisibility] = useState(false);
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const {
     register,
@@ -43,8 +47,9 @@ export function Login() {
           dispatch(addToken(accessToken));
 
           reset()
+          closeModal();
           return login.user;
-  
+          
     } catch (error) {
       console.log(error)
     }

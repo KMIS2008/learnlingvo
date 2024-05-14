@@ -56,7 +56,7 @@ export const ModalRegisration = ({ isOpenModalRegistration, setIsOpenModalRegist
          <Text>Thank you for your interest in our platform! In order to register, we need some information. 
             Please provide us with the following information</Text>
 
-         <Registration/>
+         <Registration setIsOpenModalRegistration={setIsOpenModalRegistration}/>
 </Container>
 
       </Modal>

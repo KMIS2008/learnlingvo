@@ -18,10 +18,12 @@ const SignupSchema = Yup.object().shape({
   });
 
 
-export function Registration() {
+export function Registration({setIsOpenModalRegistration}) {
   const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [visibility, setVisibility] = useState(false);
+
+  const closeModalRegistration = ()=>{setIsOpenModalRegistration(false)}
 
   const {
     register,
@@ -47,6 +49,7 @@ export function Registration() {
 
     dispatch(addToken(result.user.accessToken));
     reset();
+    closeModalRegistration();
     return result;
   } catch (error) {
     throw error;

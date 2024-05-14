@@ -55,7 +55,7 @@ export const ModalLogin = ({ isModalOpen, setIsOpen, }) => {
 
          <Text>Welcome back! Please enter your credentials to access your account and continue your search for an teacher.</Text>
 
-         <Login/>
+         <Login setIsOpen={setIsOpen}/>
 </Container>
       </Modal>
       </>
