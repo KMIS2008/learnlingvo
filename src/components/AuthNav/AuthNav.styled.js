@@ -17,6 +17,7 @@ line-height: 1.25;
 text-align: center;
 border: none;
 color: #121417;
+cursor: pointer;
 
 transition: scale 200ms;
 
