@@ -32,14 +32,15 @@ margin-left: ${p=>p.theme.spacing(6)};
 font-size: 16px;
 line-height: 1,25;
 color: #121417;
-transition: scale 200ms;
+transition: transform 250ms ;
 cursor: pointer;
+
+&:hover {
+    transform: scale(1.2);
+    color: ${p=>p.theme.colors.hover};
+  }
 
 &.active{
     color: ${p=>p.theme.colors.bluedark};
   }
-
-&:hover {
-  transform: scale(1.2);
-}
 `
