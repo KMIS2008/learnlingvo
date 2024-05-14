@@ -1,9 +1,11 @@
 import {ContainerFlex, ContainerHero, Title, TitleSpan,TextHome, ButtonStart, Image} from './Home.styled';
 import girl from '../../assets/girl.jpg';
 import {Statistic} from '../Statistic/Statistic';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+   const navigator = useNavigate(); 
+   
     return (
       <div>
         <ContainerFlex>
@@ -15,10 +17,13 @@ export const Home = () => {
               <TextHome>Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language 
                 proficiency to new heights by connecting with highly qualified and experienced tutors.
               </TextHome>   
-
-              <Link to="/teacher">
-                 <ButtonStart type='button'>Get started</ButtonStart>          
-              </Link>
+           
+               <ButtonStart type='button' 
+               onClick={() => navigator('teacher')}
+             >
+                  Get started
+               </ButtonStart>          
+             
 
            </ContainerHero>
 

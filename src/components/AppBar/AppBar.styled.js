@@ -28,12 +28,18 @@ letter-spacing: -0.4px;
 
 export const Link = styled(NavLink)`
 
-margin-left: ${p=>p.theme.spacing(2)};
+margin-left: ${p=>p.theme.spacing(6)};
 font-size: 16px;
 line-height: 1,25;
 color: #121417;
+transition: scale 200ms;
 
 &.active{
     color: ${p=>p.theme.colors.bluedark};
   }
+
+&:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 `
