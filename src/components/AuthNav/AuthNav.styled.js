@@ -39,6 +39,7 @@ border: none;
 color: #FFFFFF;
 background-color: #121417;
 border-radius: 12px;
+cursor: pointer;
 
 transition: scale 200ms;
 

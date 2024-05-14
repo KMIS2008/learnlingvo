@@ -49,6 +49,7 @@ line-height:1,56;
 background-color: ${p=>p.theme.colors.blue};
 border: none;
 border-radius: 12px;
+cursor: pointer;
 
 &:hover {
     background-color: ${p=>p.theme.colors.hover};

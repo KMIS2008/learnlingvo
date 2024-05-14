@@ -33,13 +33,13 @@ font-size: 16px;
 line-height: 1,25;
 color: #121417;
 transition: scale 200ms;
+cursor: pointer;
 
 &.active{
     color: ${p=>p.theme.colors.bluedark};
   }
 
 &:hover {
-  cursor: pointer;
   transform: scale(1.1);
 }
 `
