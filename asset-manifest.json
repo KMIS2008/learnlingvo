@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/learnlingvo/static/css/main.cd2e038f.css",
-    "main.js": "/learnlingvo/static/js/main.0c19c3ee.js",
+    "main.js": "/learnlingvo/static/js/main.95a8c03e.js",
     "static/js/711.fb865442.chunk.js": "/learnlingvo/static/js/711.fb865442.chunk.js",
-    "static/js/399.050e760f.chunk.js": "/learnlingvo/static/js/399.050e760f.chunk.js",
+    "static/js/552.7a8ed55c.chunk.js": "/learnlingvo/static/js/552.7a8ed55c.chunk.js",
     "static/js/61.cdc0dba7.chunk.js": "/learnlingvo/static/js/61.cdc0dba7.chunk.js",
     "static/js/678.227871c4.chunk.js": "/learnlingvo/static/js/678.227871c4.chunk.js",
     "static/js/589.86f58815.chunk.js": "/learnlingvo/static/js/589.86f58815.chunk.js",
@@ -12,13 +12,14 @@
     "static/js/50.1f307b66.chunk.js": "/learnlingvo/static/js/50.1f307b66.chunk.js",
     "static/js/29.ac66ce95.chunk.js": "/learnlingvo/static/js/29.ac66ce95.chunk.js",
     "static/js/302.204aa31d.chunk.js": "/learnlingvo/static/js/302.204aa31d.chunk.js",
+    "static/media/girl2.png": "/learnlingvo/static/media/girl2.f26cdd67059020d109c2.png",
     "static/media/girl.jpg": "/learnlingvo/static/media/girl.0c19c89fdaea5eb5e09a.jpg",
     "static/media/sprite.svg": "/learnlingvo/static/media/sprite.0a3b4ad71bad020e2e8de0fb8cb16dde.svg",
     "index.html": "/learnlingvo/index.html",
     "main.cd2e038f.css.map": "/learnlingvo/static/css/main.cd2e038f.css.map",
-    "main.0c19c3ee.js.map": "/learnlingvo/static/js/main.0c19c3ee.js.map",
+    "main.95a8c03e.js.map": "/learnlingvo/static/js/main.95a8c03e.js.map",
     "711.fb865442.chunk.js.map": "/learnlingvo/static/js/711.fb865442.chunk.js.map",
-    "399.050e760f.chunk.js.map": "/learnlingvo/static/js/399.050e760f.chunk.js.map",
+    "552.7a8ed55c.chunk.js.map": "/learnlingvo/static/js/552.7a8ed55c.chunk.js.map",
     "61.cdc0dba7.chunk.js.map": "/learnlingvo/static/js/61.cdc0dba7.chunk.js.map",
     "678.227871c4.chunk.js.map": "/learnlingvo/static/js/678.227871c4.chunk.js.map",
     "589.86f58815.chunk.js.map": "/learnlingvo/static/js/589.86f58815.chunk.js.map",
@@ -30,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.0c19c3ee.js"
+    "static/js/main.95a8c03e.js"
   ]
 }
