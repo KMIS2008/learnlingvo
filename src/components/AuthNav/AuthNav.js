@@ -9,17 +9,24 @@ import { useDispatch } from "react-redux";
 import {deleteToken} from '../../redux/AuthSlice';
 import { useSelector } from 'react-redux';
 import{selectIsLoggedIn} from '../../redux/selects';
+import { useNavigate } from 'react-router-dom';
+
 
 export const AuthNav=()=>{
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isOpenModalRegistration, setIsOpenModalRegistration] = useState(false);
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(selectIsLoggedIn);
+    const navigator = useNavigate(); 
+   
 
     const handleLogOut = async  ()=>{
      try {
        await signOut(auth)
        dispatch(deleteToken())
+
+       navigator('/')
+
      } catch (error) {
       throw error;
      }
@@ -39,7 +46,7 @@ export const AuthNav=()=>{
             </ButtonRegistr>            
             </>}
 
-              {isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
+            {isLoggedIn && ( <ButtonLogin type="button" onClick={handleLogOut} >Log out</ButtonLogin>)}
 
             <ModalLogin isModalOpen={isOpenModal} setIsOpen={setIsOpenModal}/>
 
