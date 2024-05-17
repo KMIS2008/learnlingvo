@@ -51,4 +51,9 @@ button {
   padding: 0;
   background-color: transparent;
 }
+
+
+.no-scroll {
+  overflow: hidden;
+}
 `

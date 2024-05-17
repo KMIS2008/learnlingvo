@@ -9,6 +9,7 @@ import { Container,
          AvatarImg,
          TextTeaher,
          FullName } from "./ModalBookTriel.styled";
+import { useEffect } from "react";
 
 Modal.setAppElement('#modal');
 
@@ -25,12 +26,24 @@ export const ModalBookTrial = ({ isOpenModalBook, setIsOpenModalBook, avatar, na
         bottom: "auto",
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
-        padding: "20px",
+        padding: "40px",
         maxWidth: "600px",
         maxHeight: "972px",
         borderRadius: "30px",
       },
     };
+
+    useEffect(() => {
+      if (isOpenModalBook) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
+  
+      return () => {
+        document.body.classList.remove('no-scroll');
+      };
+    }, [isOpenModalBook]);
     
       return (
         <>

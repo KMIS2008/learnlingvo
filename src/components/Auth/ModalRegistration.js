@@ -5,6 +5,7 @@ import {Container,
         SvgButton,
         Title,
         Text } from './ModalLogin.styled';
+import { useEffect } from "react";
 
 Modal.setAppElement('#modal');
 
@@ -28,6 +29,18 @@ export const ModalRegisration = ({ isOpenModalRegistration, setIsOpenModalRegist
       borderRadius: "30px",
     },
   };
+
+  useEffect(() => {
+    if (isOpenModalRegistration) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpenModalRegistration]);
   
     return (
       <>

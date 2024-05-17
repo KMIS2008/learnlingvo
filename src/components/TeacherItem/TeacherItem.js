@@ -47,34 +47,29 @@ export const TeacherItem = ({value}) => {
     const isLoggedIn=useSelector(selectIsLoggedIn);
     
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const isFavorite = favorites.some((favorite) => favorite.name === value.name);
 
-    const isFavorite = favorites.some((favorite) => favorite.surname === value.surname)
 
     function addToFavorites(value) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
          favorites = [...favorites, value];
         localStorage.setItem('favorites', JSON.stringify(favorites));
       }
 
-      function removeFromFavorites(value) {
-  
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      
-        const person = favorites.filter(person => person.name !== value.name );
+    function removeFromFavorites(value) {
+        const person = favorites.filter(favorite => favorite.name !== value.name );
           localStorage.setItem('favorites', JSON.stringify(person));
       }
       
     const handleReadMore=()=>{setReadMore(true)};
 
-    const handleFavorite =()=>{
+    const handleFavorite =(value) =>{
         if(isLoggedIn){
+
             setisHeart(!isHeart)
            
-           if(!isFavorite)
-                {addToFavorites(value)}
-            
-           else { removeFromFavorites(value) }
-        }
+           !isFavorite? addToFavorites(value): removeFromFavorites(value)
+           }
+        
         else {toast.warn('You must Log in',{theme: "colored",});}
 }
     
@@ -126,13 +121,13 @@ export const TeacherItem = ({value}) => {
 
                     <p>Price / 1 hour: {price_per_hour} </p>
 
-                    {!isFavorite? (<SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                    {!isFavorite? <SvgHeart   onClick={() => handleFavorite(value)} width= '26px' height='26px'>
                                         <use xlinkHref={sprite + '#icon-heart'} />
-                                      </SvgHeart> )
+                                      </SvgHeart> 
                                 :
-                                  (<SvgHeart onClick={handleFavorite} width= '26px' height='26px'>
+                                  <SvgHeart onClick={() => handleFavorite(value)} width= '26px' height='26px'>
                                      <use xlinkHref={sprite + '#icon-hover'} />
-                                   </SvgHeart> )  
+                                   </SvgHeart>   
                                       }
 
                   </ContainerInfo>

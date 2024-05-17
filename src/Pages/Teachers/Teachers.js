@@ -14,7 +14,6 @@ export default function Teachers (){
 
   useEffect(() => {
     fetchTeachers({setTeachers});
-
     
   }, []);
 
