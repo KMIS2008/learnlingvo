@@ -1,36 +1,36 @@
 {
   "files": {
     "main.css": "/learnlingvo/static/css/main.cd2e038f.css",
-    "main.js": "/learnlingvo/static/js/main.92df8fc0.js",
+    "main.js": "/learnlingvo/static/js/main.9ae22a09.js",
     "static/js/711.64f03039.chunk.js": "/learnlingvo/static/js/711.64f03039.chunk.js",
     "static/js/552.7a8ed55c.chunk.js": "/learnlingvo/static/js/552.7a8ed55c.chunk.js",
     "static/js/61.cdc0dba7.chunk.js": "/learnlingvo/static/js/61.cdc0dba7.chunk.js",
     "static/js/678.227871c4.chunk.js": "/learnlingvo/static/js/678.227871c4.chunk.js",
-    "static/js/589.86f58815.chunk.js": "/learnlingvo/static/js/589.86f58815.chunk.js",
+    "static/js/589.55705316.chunk.js": "/learnlingvo/static/js/589.55705316.chunk.js",
     "static/js/705.d1f6041f.chunk.js": "/learnlingvo/static/js/705.d1f6041f.chunk.js",
-    "static/css/50.b1064141.chunk.css": "/learnlingvo/static/css/50.b1064141.chunk.css",
-    "static/js/50.1f307b66.chunk.js": "/learnlingvo/static/js/50.1f307b66.chunk.js",
+    "static/css/286.40ffd97e.chunk.css": "/learnlingvo/static/css/286.40ffd97e.chunk.css",
+    "static/js/286.a7171cdc.chunk.js": "/learnlingvo/static/js/286.a7171cdc.chunk.js",
     "static/js/29.ac66ce95.chunk.js": "/learnlingvo/static/js/29.ac66ce95.chunk.js",
-    "static/js/302.c7fff803.chunk.js": "/learnlingvo/static/js/302.c7fff803.chunk.js",
+    "static/js/302.385bbf1a.chunk.js": "/learnlingvo/static/js/302.385bbf1a.chunk.js",
     "static/media/girl2.png": "/learnlingvo/static/media/girl2.f26cdd67059020d109c2.png",
     "static/media/girl.jpg": "/learnlingvo/static/media/girl.0c19c89fdaea5eb5e09a.jpg",
     "static/media/sprite.svg": "/learnlingvo/static/media/sprite.0a3b4ad71bad020e2e8de0fb8cb16dde.svg",
     "index.html": "/learnlingvo/index.html",
     "main.cd2e038f.css.map": "/learnlingvo/static/css/main.cd2e038f.css.map",
-    "main.92df8fc0.js.map": "/learnlingvo/static/js/main.92df8fc0.js.map",
+    "main.9ae22a09.js.map": "/learnlingvo/static/js/main.9ae22a09.js.map",
     "711.64f03039.chunk.js.map": "/learnlingvo/static/js/711.64f03039.chunk.js.map",
     "552.7a8ed55c.chunk.js.map": "/learnlingvo/static/js/552.7a8ed55c.chunk.js.map",
     "61.cdc0dba7.chunk.js.map": "/learnlingvo/static/js/61.cdc0dba7.chunk.js.map",
     "678.227871c4.chunk.js.map": "/learnlingvo/static/js/678.227871c4.chunk.js.map",
-    "589.86f58815.chunk.js.map": "/learnlingvo/static/js/589.86f58815.chunk.js.map",
+    "589.55705316.chunk.js.map": "/learnlingvo/static/js/589.55705316.chunk.js.map",
     "705.d1f6041f.chunk.js.map": "/learnlingvo/static/js/705.d1f6041f.chunk.js.map",
-    "50.b1064141.chunk.css.map": "/learnlingvo/static/css/50.b1064141.chunk.css.map",
-    "50.1f307b66.chunk.js.map": "/learnlingvo/static/js/50.1f307b66.chunk.js.map",
+    "286.40ffd97e.chunk.css.map": "/learnlingvo/static/css/286.40ffd97e.chunk.css.map",
+    "286.a7171cdc.chunk.js.map": "/learnlingvo/static/js/286.a7171cdc.chunk.js.map",
     "29.ac66ce95.chunk.js.map": "/learnlingvo/static/js/29.ac66ce95.chunk.js.map",
-    "302.c7fff803.chunk.js.map": "/learnlingvo/static/js/302.c7fff803.chunk.js.map"
+    "302.385bbf1a.chunk.js.map": "/learnlingvo/static/js/302.385bbf1a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.92df8fc0.js"
+    "static/js/main.9ae22a09.js"
   ]
 }
