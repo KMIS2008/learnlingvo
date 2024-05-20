@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import {useDispatch } from 'react-redux';
-import {Input, Button, ButtonEye} from './Login.styled';
+import {Input, Button, ButtonEye, Error} from './Login.styled';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../database';
@@ -19,6 +19,7 @@ export function Login({setIsOpen}) {
   const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [visibility, setVisibility] = useState(false);
+  const [error, setError] = useState('');
 
   const closeModal = () => {
     setIsOpen(false);
@@ -51,7 +52,7 @@ export function Login({setIsOpen}) {
           return login.user;
           
     } catch (error) {
-      console.log(error)
+      setError('Invalid email or password. Try again')
     }
   };
 
@@ -76,6 +77,7 @@ export function Login({setIsOpen}) {
       </div>
 
     <Button type="submit" disabled={isSubmitting}>Log In</Button>
+    {error && <Error>{error}</Error>}
   </form>   
   );
 }

@@ -35,3 +35,7 @@ border: none;
 width: 20px;
 height: 20px;
 `
+
+export const Error = styled.p`
+font-size: 25px;
+color: #ff033e; `

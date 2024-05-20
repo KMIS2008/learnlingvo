@@ -35,3 +35,7 @@ cursor: pointer;
   }
 `
 
+export const Error = styled.p`
+font-size: 25px;
+color: #ff033e; `
+

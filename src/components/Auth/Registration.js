@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import * as Yup from 'yup';
 import {useDispatch } from 'react-redux';
-import {Input, Button, ButtonEye} from './Registration.styled';
+import {Input, Button, ButtonEye, Error} from './Registration.styled';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../database';
@@ -22,6 +22,7 @@ export function Registration({setIsOpenModalRegistration}) {
   const dispatch = useDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [visibility, setVisibility] = useState(false);
+  const [error, setError] = useState('');
 
   const closeModalRegistration = ()=>{setIsOpenModalRegistration(false)}
 
@@ -52,7 +53,7 @@ export function Registration({setIsOpenModalRegistration}) {
     closeModalRegistration();
     return result;
   } catch (error) {
-    throw error;
+    setError('A user with the same name or email is already registered.')
   }}
     
   return (
@@ -86,6 +87,7 @@ export function Registration({setIsOpenModalRegistration}) {
     
        </div>
       <Button type="submit">Sign Up</Button>
+      {error && <Error>{error}</Error>}
   </form>
   );
 }
