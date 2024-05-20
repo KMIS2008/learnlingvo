@@ -16,9 +16,10 @@ padding-left: ${p=>p.theme.spacing(4)};
 width: 100%;
 height: 54px;
 
-border: 1px solid rgba(18, 20, 23, 0.1);
+border: 1px solid rgba(18, 20, 23, 0.1) ;
 border-radius: 12px;
 outline: none;
+border: 2px solid ${props => props.hasError ? 'red' : '#ccc'};
 
 &::placeholder{
     font-size: 16px;
@@ -88,5 +89,9 @@ export const CheckedIcon = styled.svg`
   ${InputRadio}:checked + ${RadioButtonIndicator} & {
     visibility: visible;
   }
+`;
+
+export const Error = styled.p`
+margin-bottom: 18px;
 `;
 

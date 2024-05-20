@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://KMIS2008.github.io/learnlingvo/",
   "dependencies": {
+    "@hookform/resolvers": "^3.4.0",
     "@reduxjs/toolkit": "^2.2.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

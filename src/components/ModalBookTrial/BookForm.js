@@ -1,90 +1,113 @@
-import { useForm } from 'react-hook-form';
+
+import React from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import {Title, RadioWrapper, LabelRadio, InputRadio, Input, Button, RadioButtonIndicator, CheckedIcon} from './BookForm.styled';
+import {
+  Title, RadioWrapper, LabelRadio, InputRadio, Input, Button, RadioButtonIndicator, CheckedIcon, Error
+} from './BookForm.styled';
 import sprite from '../../assets/sprite.svg';
 
+
 const SignupSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(2, "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan")
-      .required('Required'),
-    email: Yup.string().email("Email must contait @").required('Required'),
-    number: Yup.string().min(10, "Telefon number contain min 10 symbols").required('Required'),
+  name: Yup.string()
+    .min(2, "Name must be at least 2 characters long")
+    .required('Name is required'),
+  email: Yup.string()
+    .email("Email must contain @")
+    .required('Email is required'),
+  phone: Yup.string()
+    .min(10, "Phone number must be at least 10 characters long")
+    .required('Phone number is required'),
+  topic: Yup.string().required('Please select a reason for learning English')
+});
+
+const options = [
+  { name: 'Career and business', id: '1', value: 'careerAndBusiness' },
+  { name: 'Lesson for kids', id: '2', value: 'lessonForKids' },
+  { name: 'Living abroad', id: '3', value: 'livingAbroad' },
+  { name: 'Exams and coursework', id: '4', value: 'examsAndCoursework' },
+  { name: 'Culture, travel or hobby', id: '5', value: 'cultureTravelOrHobby' },
+];
+
+export function BookForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    control
+  } = useForm({
+    resolver: yupResolver(SignupSchema)
   });
 
-  const options= [
-      { name: 'Career and business',  id: '1', value: 'careerAndBusiness'},
-      { name: 'Lesson for kids', id: '2', value: 'lessonForKids'},
-      { name: 'Living abroad', id: '3', value: 'livingAbroad'},
-      { name: 'Exams and coursework', id: '4', value: 'examsAndCoursework' },
-      { name: 'Culture, travel or hobby', id: '5', value: 'cultureTravelOrHobby'},
-    ];
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
 
-export function BookForm (){
-    const {
-        register,
-        handleSubmit,
-        reset,
-   
-      } = useForm({ validationSchema:SignupSchema});
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <Title>What is your main reason for learning English?</Title>
+        <RadioWrapper>
+          {options.map(({ name, value, id }) => (
+            <LabelRadio key={id}>
+              <Controller
+                name="topic"
+                control={control}
+                render={({ field }) => (
+                  <InputRadio
+                    type="radio"
+                    {...field}
+                    value={value}
+                    checked={field.value === value}
+                  />
+                )}
+              />
+              <RadioButtonIndicator>
+                <CheckedIcon width='10px' height='10px'>
+                  <use xlinkHref={sprite + '#icon-circle'} />
+                </CheckedIcon>
+              </RadioButtonIndicator>
+              <span>{name}</span>
+            </LabelRadio>
+          ))}
+        </RadioWrapper>
+        {errors.topic && <Error style={{ color: 'red' }}>{errors.topic.message}</Error>}
+      </div>
 
-      const onSubmit = (data) => {
-        console.log(data)
-        reset()
-      };
+      <div>
+        <Input
+          type="text"
+          placeholder='Full Name'
+          {...register('name')}
+          hasError={!!errors.name}
+        />
+        {errors.name && <Error style={{ color: 'red' }}>{errors.name.message}</Error>}
+      </div>
 
-      return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <Title>What is your main reason for learning English?</Title>
+      <div>
+        <Input
+          type="email"
+          placeholder='Email'
+          {...register('email')}
+          hasError={!!errors.email}
+        />
+        {errors.email && <Error style={{ color: 'red' }}>{errors.email.message}</Error>}
+      </div>
 
-          <RadioWrapper>
-      {options.map(({ name, value, id }) => (
-        <LabelRadio key={id}>
-          <InputRadio
-            type="radio"
-            name="topic"
-            value={value}
-            {...register('topic', { required: true })}
-          />
-          <RadioButtonIndicator>
-            <CheckedIcon width= '10px' height='10px'>
-              <use xlinkHref={sprite + '#icon-circle'} />
-            </CheckedIcon>
-          </RadioButtonIndicator>
-          <span>{name}</span>
-        </LabelRadio>
-      ))}
-    </RadioWrapper>
+      <div>
+        <Input
+          type="tel"
+          placeholder='Phone number'
+          {...register('phone')}
+          hasError={!!errors.phone}
+        />
+        {errors.phone && <Error style={{ color: 'red' }}>{errors.phone.message}</Error>}
+      </div>
 
-        </div>       
-
-         <div>
-          <Input type="text" 
-                 id="name" 
-                 name="name" 
-                 placeholder='Full Name' 
-                 {...register('name', { required: true })} />
-        </div>
-  
-        <div>
-          <Input type="email" 
-                 id="email" 
-                 name="email" 
-                 placeholder='Email' 
-                 {...register('email', { required: true })} />
-        </div>
-  
-        <div>
-          <Input type="tel" 
-                 id="phone" 
-                 name="phone" 
-                 placeholder='Phone number' 
-                 {...register('phone', { required: true })}
-                 />
-        </div>
-  
-        <Button type="submit">Book</Button>
-      </form>
-      )
-
+      <Button type="submit">Book</Button>
+    </form>
+  );
 }
